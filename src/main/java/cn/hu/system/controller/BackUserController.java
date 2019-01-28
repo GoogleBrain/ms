@@ -22,6 +22,11 @@ import cn.hu.system.service.UserService;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 网站管理人员
+ * @author googlebrain
+ *
+ */
 @Controller
 public class BackUserController extends BaseController {
 

@@ -22,6 +22,9 @@ import cn.hu.system.service.UserService;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 买家
+ */
 @Controller
 public class FrontUserController extends BaseController {
 

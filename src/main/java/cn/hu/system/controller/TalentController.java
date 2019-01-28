@@ -22,6 +22,11 @@ import cn.hu.system.service.UserService;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 入住商户
+ * @author googlebrain
+ *
+ */
 @Controller
 public class TalentController extends BaseController {
 
