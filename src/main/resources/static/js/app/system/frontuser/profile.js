@@ -17,7 +17,7 @@ $(function () {
         var $this = $(this);
         $this.on("click", function () {
             var target_src = $(this).attr("src");
-            $.post(ctx + "user/changeAvatar", {"imgName": target_src}, function (r) {
+            $.post(ctx + "frontuser/changeAvatar", {"imgName": target_src}, function (r) {
                 if (r.code === 0) {
                     $("#close_update_avatar_button").trigger("click");
                     $MB.n_success(r.msg);
@@ -38,7 +38,7 @@ $(function () {
         var validator = $userProfileForm.validate();
         var flag = validator.form();
         if (flag) {
-            $.post(ctx + "user/updateUserProfile", $userProfileForm.serialize(), function (r) {
+            $.post(ctx + "frontuser/updateUserProfile", $userProfileForm.serialize(), function (r) {
                 if (r.code === 0) {
                     $("#update-profile .btn-close").trigger("click");
                     $MB.n_success(r.msg);
@@ -51,13 +51,13 @@ $(function () {
 });
 
 function refreshUserProfile() {
-    $.post(ctx + "user/profile", function (r) {
+    $.post(ctx + "frontuser/profile", function (r) {
         $main_content.html("").append(r);
     });
 }
 
 function editUserProfile() {
-    $.post(ctx + "user/getUserProfile", {"userId": userId}, function (r) {
+    $.post(ctx + "frontuser/getUserProfile", {"userId": userId}, function (r) {
         if (r.code === 0) {
             var $form = $('#update-profile');
             var $deptTree = $('#deptTree');

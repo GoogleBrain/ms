@@ -10,7 +10,7 @@ function updateUser() {
         return;
     }
     var userId = selected[0].userId;
-    $.post(ctx + "user/getUser", {"userId": userId}, function (r) {
+    $.post(ctx + "frontuser/getUser", {"userId": userId}, function (r) {
         if (r.code === 0) {
             var $form = $('#user-add');
             var $deptTree = $('#deptTree');

@@ -1,7 +1,7 @@
 $(function () {
     var $userTableForm = $(".user-table-form");
     var settings = {
-        url: ctx + "user/list",
+        url: ctx + "frontuser/list",
         pageSize: 10,
         queryParams: function (params) {
             return {
@@ -87,7 +87,7 @@ function deleteUsers() {
         text: "确定删除选中用户？",
         confirmButtonText: "确定删除"
     }, function () {
-        $.post(ctx + 'user/delete', {"ids": ids}, function (r) {
+        $.post(ctx + 'frontuser/delete', {"ids": ids}, function (r) {
             if (r.code === 0) {
                 $MB.n_success(r.msg);
                 refresh();
@@ -99,7 +99,7 @@ function deleteUsers() {
 }
 
 function exportUserExcel() {
-    $.post(ctx + "user/excel", $(".user-table-form").serialize(), function (r) {
+    $.post(ctx + "frontuser/excel", $(".user-table-form").serialize(), function (r) {
         if (r.code === 0) {
             window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
         } else {
@@ -109,7 +109,7 @@ function exportUserExcel() {
 }
 
 function exportUserCsv() {
-    $.post(ctx + "user/csv", $(".user-table-form").serialize(), function (r) {
+    $.post(ctx + "frontuser/csv", $(".user-table-form").serialize(), function (r) {
         if (r.code === 0) {
             window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
         } else {

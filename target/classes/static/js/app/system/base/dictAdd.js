@@ -38,7 +38,7 @@ $(function () {
 
 function closeModal() {
     $("#dict-add-button").attr("name", "save");
-    $("#dict-add-modal-title").html('新增字典');
+    $("#dict-add-modal-title").html('新增设置');
     validator.resetForm();
     $MB.closeAndRestModal("dict-add");
 }
@@ -49,39 +49,38 @@ function validateRule() {
         rules: {
             keyy: {
                 required: true,
-                digits: true,
-                maxlength: 10
+                maxlength: 40
             },
             valuee: {
                 required: true,
-                maxlength: 10
+                maxlength: 40
             },
             tableName: {
                 required: true,
-                maxlength: 10
+                maxlength: 40
             },
             fieldName: {
                 required: true,
-                maxlength: 10
+                maxlength: 40
             }
         },
         messages: {
             keyy: {
                 required: icon + "请输入键名",
                 digits: icon + "请输入整数",
-                maxlength: icon + "长度不能超过10个字符"
+                maxlength: icon + "长度不能超过40个字符"
             },
             valuee: {
                 required: icon + "请输入键值",
-                maxlength: icon + "长度不能超过10个字符"
+                maxlength: icon + "长度不能超过40个字符"
             },
             tableName: {
                 required: icon + "请输入关联表名",
-                maxlength: icon + "长度不能超过10个字符"
+                maxlength: icon + "长度不能超过40个字符"
             },
             fieldName: {
                 required: icon + "请输入字段名",
-                maxlength: icon + "长度不能超过10个字符"
+                maxlength: icon + "长度不能超过40个字符"
             }
         }
     });

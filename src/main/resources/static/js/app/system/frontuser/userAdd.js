@@ -22,7 +22,7 @@ $(function () {
         var flag = validator.form();
         if (flag) {
             if (name === "save") {
-                $.post(ctx + "user/add", $userAddForm.serialize(), function (r) {
+                $.post(ctx + "frontuser/add", $userAddForm.serialize(), function (r) {
                     if (r.code === 0) {
                         closeModal();
                         $MB.n_success(r.msg);
@@ -31,7 +31,7 @@ $(function () {
                 });
             }
             if (name === "update") {
-                $.post(ctx + "user/update", $userAddForm.serialize(), function (r) {
+                $.post(ctx + "frontuser/update", $userAddForm.serialize(), function (r) {
                     if (r.code === 0) {
                         closeModal();
                         $MB.n_success(r.msg);
@@ -72,7 +72,7 @@ function validateRule() {
                 minlength: 3,
                 maxlength: 10,
                 remote: {
-                    url: "user/checkUserName",
+                    url: "frontuser/checkUserName",
                     type: "get",
                     dataType: "json",
                     data: {

@@ -23,7 +23,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller
-public class TalentController extends BaseController {
+public class BackUserController extends BaseController {
 
     private Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -32,15 +32,15 @@ public class TalentController extends BaseController {
 
     private static final String ON = "on";
 
-    @RequestMapping("talent")
-    @RequiresPermissions("talent:list")
+    @RequestMapping("backuser")
+    @RequiresPermissions("backuser:list")
     public String index(Model model) {
         User user = super.getCurrentUser();
         model.addAttribute("user", user);
-        return "system/talent/talentUser";
+        return "system/backuser/backUser";
     }
 
-    @RequestMapping("talent/checkUserName")
+    @RequestMapping("backuser/checkUserName")
     @ResponseBody
     public boolean checkUserName(String username, String oldusername) {
         if (StringUtils.isNotBlank(oldusername) && username.equalsIgnoreCase(oldusername)) {
@@ -50,7 +50,7 @@ public class TalentController extends BaseController {
         return result == null;
     }
 
-    @RequestMapping("talent/getUser")
+    @RequestMapping("backuser/getUser")
     @ResponseBody
     public ResponseBo getUser(Long userId) {
         try {
@@ -63,14 +63,14 @@ public class TalentController extends BaseController {
     }
 
     @Log("获取用户信息")
-    @RequestMapping("talent/list")
-    @RequiresPermissions("talent:list")
+    @RequestMapping("backuser/list")
+    @RequiresPermissions("backuser:list")
     @ResponseBody
     public Map<String, Object> userList(QueryRequest request, User user) {
         return super.selectByPageNumSize(request, () -> this.userService.findUserWithDept(user, request));
     }
 
-    @RequestMapping("talent/excel")
+    @RequestMapping("backuser/excel")
     @ResponseBody
     public ResponseBo userExcel(User user) {
         try {
@@ -82,7 +82,7 @@ public class TalentController extends BaseController {
         }
     }
 
-    @RequestMapping("talent/csv")
+    @RequestMapping("backuser/csv")
     @ResponseBody
     public ResponseBo userCsv(User user) {
         try {
@@ -94,7 +94,7 @@ public class TalentController extends BaseController {
         }
     }
 
-    @RequestMapping("talent/regist")
+    @RequestMapping("backuser/regist")
     @ResponseBody
     public ResponseBo regist(User user) {
         try {
@@ -111,7 +111,7 @@ public class TalentController extends BaseController {
     }
 
     @Log("更换主题")
-    @RequestMapping("talent/theme")
+    @RequestMapping("backuser/theme")
     @ResponseBody
     public ResponseBo updateTheme(User user) {
         try {
@@ -124,8 +124,8 @@ public class TalentController extends BaseController {
     }
 
     @Log("新增用户")
-    @RequiresPermissions("talent:add")
-    @RequestMapping("talent/add")
+    @RequiresPermissions("backuser:add")
+    @RequestMapping("backuser/add")
     @ResponseBody
     public ResponseBo addUser(User user, Long[] roles) {
         try {
@@ -142,8 +142,8 @@ public class TalentController extends BaseController {
     }
 
     @Log("修改用户")
-    @RequiresPermissions("talent:update")
-    @RequestMapping("talent/update")
+    @RequiresPermissions("backuser:update")
+    @RequestMapping("backuser/update")
     @ResponseBody
     public ResponseBo updateUser(User user, Long[] rolesSelect) {
         try {
@@ -160,8 +160,8 @@ public class TalentController extends BaseController {
     }
 
     @Log("删除用户")
-    @RequiresPermissions("talent:delete")
-    @RequestMapping("talent/delete")
+    @RequiresPermissions("backuser:delete")
+    @RequestMapping("backuser/delete")
     @ResponseBody
     public ResponseBo deleteUsers(String ids) {
         try {
@@ -173,7 +173,7 @@ public class TalentController extends BaseController {
         }
     }
 
-    @RequestMapping("talent/checkPassword")
+    @RequestMapping("backuser/checkPassword")
     @ResponseBody
     public boolean checkPassword(String password) {
         User user = getCurrentUser();
@@ -181,7 +181,7 @@ public class TalentController extends BaseController {
         return user.getPassword().equals(encrypt);
     }
 
-    @RequestMapping("talent/updatePassword")
+    @RequestMapping("backuser/updatePassword")
     @ResponseBody
     public ResponseBo updatePassword(String newPassword) {
         try {
@@ -193,7 +193,7 @@ public class TalentController extends BaseController {
         }
     }
 
-    @RequestMapping("talent/profile")
+    @RequestMapping("backuser/profile")
     public String profileIndex(Model model) {
         User user = super.getCurrentUser();
         user = this.userService.findUserProfile(user);
@@ -206,10 +206,10 @@ public class TalentController extends BaseController {
             user.setSsex("性别：保密");
         }
         model.addAttribute("user", user);
-        return "system/talent/talentProfile";
+        return "system/backuser/backProfile";
     }
 
-    @RequestMapping("talent/getUserProfile")
+    @RequestMapping("backuser/getUserProfile")
     @ResponseBody
     public ResponseBo getUserProfile(Long userId) {
         try {
@@ -222,7 +222,7 @@ public class TalentController extends BaseController {
         }
     }
 
-    @RequestMapping("talent/updateUserProfile")
+    @RequestMapping("backuser/updateUserProfile")
     @ResponseBody
     public ResponseBo updateUserProfile(User user) {
         try {
@@ -234,7 +234,7 @@ public class TalentController extends BaseController {
         }
     }
 
-    @RequestMapping("talent/changeAvatar")
+    @RequestMapping("backuser/changeAvatar")
     @ResponseBody
     public ResponseBo changeAvatar(String imgName) {
         try {

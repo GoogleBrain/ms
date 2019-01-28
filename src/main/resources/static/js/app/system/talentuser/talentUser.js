@@ -1,7 +1,7 @@
 $(function () {
     var $userTableForm = $(".user-table-form");
     var settings = {
-        url: ctx + "frontuser/list",
+        url: ctx + "backuser/list",
         pageSize: 10,
         queryParams: function (params) {
             return {
@@ -20,24 +20,33 @@ $(function () {
         }, {
             field: 'username',
             title: '用户名'
-        }, {
+        }, 
+        {
             field: 'deptName',
             title: '部门'
-        }, {
-            field: 'email',
-            title: '邮箱'
-        }, {
-            field: 'mobile',
-            title: '手机'
-        }, {
-            field: 'ssex',
-            title: '性别',
-            formatter: function (value, row, index) {
-                if (value === '0') return '男';
-                else if (value === '1') return '女';
-                else return '保密';
-            }
-        }, {
+        },
+//        {
+//            field: 'email',
+//            title: '邮箱'
+//        }, 
+//        {
+//            field: 'mobile',
+//            title: '手机'
+//        }, 
+        {
+            field: 'ifrootuser',
+            title: '超级管理员'
+        },
+//        {
+//            field: 'ssex',
+//            title: '性别',
+//            formatter: function (value, row, index) {
+//                if (value === '0') return '男';
+//                else if (value === '1') return '女';
+//                else return '保密';
+//            }
+//        },
+        {
             field: 'crateTime',
             title: '创建时间'
         }, {
@@ -87,7 +96,7 @@ function deleteUsers() {
         text: "确定删除选中用户？",
         confirmButtonText: "确定删除"
     }, function () {
-        $.post(ctx + 'frontuser/delete', {"ids": ids}, function (r) {
+        $.post(ctx + 'backuser/delete', {"ids": ids}, function (r) {
             if (r.code === 0) {
                 $MB.n_success(r.msg);
                 refresh();
@@ -99,7 +108,7 @@ function deleteUsers() {
 }
 
 function exportUserExcel() {
-    $.post(ctx + "frontuser/excel", $(".user-table-form").serialize(), function (r) {
+    $.post(ctx + "backuser/excel", $(".user-table-form").serialize(), function (r) {
         if (r.code === 0) {
             window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
         } else {
@@ -109,7 +118,7 @@ function exportUserExcel() {
 }
 
 function exportUserCsv() {
-    $.post(ctx + "frontuser/csv", $(".user-table-form").serialize(), function (r) {
+    $.post(ctx + "backuser/csv", $(".user-table-form").serialize(), function (r) {
         if (r.code === 0) {
             window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
         } else {
