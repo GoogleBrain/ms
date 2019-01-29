@@ -6,6 +6,8 @@
       WARNING - @mbg.generated
     -->
     <id column="USER_ID" jdbcType="DECIMAL" property="userId" />
+    <result column="FRONT" jdbcType="VARCHAR" property="front" />
+    <result column="BACK" jdbcType="VARCHAR" property="back" />
     <result column="USERNAME" jdbcType="VARCHAR" property="username" />
     <result column="PASSWORD" jdbcType="VARCHAR" property="password" />
     <result column="DEPT_ID" jdbcType="DECIMAL" property="deptId" />
@@ -22,7 +24,7 @@
   </resultMap>
   
   <select id="findUserWithDept" resultType="user" parameterType="user">
-  		select u.user_id userId,u.username,u.email,u.mobile,u.status,u.crate_time crateTime,
+  		select u.user_id userId,u.username,u.email,u.mobile,u.status,u.crate_time crateTime,u.front front,u.back back,
   		u.ssex,d.dept_name deptName from t_user u 
   		left join t_dept d on(u.dept_id = d.dept_id)
   		where 1=1

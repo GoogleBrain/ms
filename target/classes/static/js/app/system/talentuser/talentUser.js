@@ -1,7 +1,7 @@
 $(function () {
     var $userTableForm = $(".user-table-form");
     var settings = {
-        url: ctx + "backuser/list",
+        url: ctx + "talent/list",
         pageSize: 10,
         queryParams: function (params) {
             return {
@@ -20,9 +20,20 @@ $(function () {
         }, {
             field: 'username',
             title: '商户名'
-        }, 
+        },
         {
-            field: 'realname',
+            field: 'front',
+            title: '正面',
+            formatter: function (value, row, index) {
+                 return "<a href='http://c.hiphotos.baidu.com/image/pic/item/908fa0ec08fa513d24237b3b306d55fbb3fbd94d.jpg' target='_blank'><img src='/img/avatar/20180414165855.jpg' /></a>";
+            }
+        },
+        {
+            field: 'back',
+            title: '反面'
+        },
+        {
+            field: 'email',
             title: '真实姓名'
         },
         {
@@ -39,7 +50,7 @@ $(function () {
         },
         {
             field: 'comm_tenant_phone',
-            title: '本月可提现次数'
+            title: '身份信息'
         },
 //        {
 //            field: 'email',

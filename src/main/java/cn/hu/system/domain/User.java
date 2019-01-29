@@ -54,6 +54,12 @@ public class User implements Serializable {
 	@ExportConfig(value = "部门")
 	private String deptName;
 
+	@Column(name = "FRONT")
+	private String front;
+
+	@Column(name = "BACK")
+	private String back;
+
 	@Column(name = "EMAIL")
 	@ExportConfig(value = "邮箱")
 	private String email;
@@ -91,6 +97,22 @@ public class User implements Serializable {
 
 	@Transient
 	private String roleName;
+
+	public String getFront() {
+		return front;
+	}
+
+	public void setFront(String front) {
+		this.front = front;
+	}
+
+	public String getBack() {
+		return back;
+	}
+
+	public void setBack(String back) {
+		this.back = back;
+	}
 
 	/**
 	 * @return USER_ID
@@ -288,32 +310,22 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User{" +
-				"userId=" + userId +
-				", username='" + username + '\'' +
-				", password='" + password + '\'' +
-				", deptId=" + deptId +
-				", deptName='" + deptName + '\'' +
-				", email='" + email + '\'' +
-				", mobile='" + mobile + '\'' +
-				", status='" + status + '\'' +
-				", crateTime=" + crateTime +
-				", modifyTime=" + modifyTime +
-				", lastLoginTime=" + lastLoginTime +
-				", ssex='" + ssex + '\'' +
-				", theme='" + theme + '\'' +
-				", avatar='" + avatar + '\'' +
-				", description='" + description + '\'' +
-				", roleName='" + roleName + '\'' +
-				'}';
+		return "User [userId=" + userId + ", username=" + username + ", password=" + password + ", deptId=" + deptId
+				+ ", deptName=" + deptName + ", front=" + front + ", back=" + back + ", email=" + email + ", mobile="
+				+ mobile + ", status=" + status + ", crateTime=" + crateTime + ", modifyTime=" + modifyTime
+				+ ", lastLoginTime=" + lastLoginTime + ", ssex=" + ssex + ", theme=" + theme + ", avatar=" + avatar
+				+ ", description=" + description + ", roleName=" + roleName + "]";
 	}
 
 	/**
-	 * shiro-redis v3.1.0 必须要有getAuthCacheKey()或者getId()方法
-	 * # Principal id field name. The field which you can get unique id to identify this principal.
-	 * # For example, if you use UserInfo as Principal class, the id field maybe userId, userName, email, etc.
-	 * # Remember to add getter to this id field. For example, getUserId(), getUserName(), getEmail(), etc.
-	 * # Default value is authCacheKey or id, that means your principal object has a method called "getAuthCacheKey()" or "getId()"
+	 * shiro-redis v3.1.0 必须要有getAuthCacheKey()或者getId()方法 # Principal id field
+	 * name. The field which you can get unique id to identify this principal. # For
+	 * example, if you use UserInfo as Principal class, the id field maybe userId,
+	 * userName, email, etc. # Remember to add getter to this id field. For example,
+	 * getUserId(), getUserName(), getEmail(), etc. # Default value is authCacheKey
+	 * or id, that means your principal object has a method called
+	 * "getAuthCacheKey()" or "getId()"
+	 * 
 	 * @return userId as Principal id field name
 	 */
 	public Long getAuthCacheKey() {
