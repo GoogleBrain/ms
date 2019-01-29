@@ -19,11 +19,27 @@ $(function () {
             visible: false
         }, {
             field: 'username',
-            title: '用户名'
+            title: '商户名'
         }, 
         {
-            field: 'deptName',
-            title: '部门'
+            field: 'realname',
+            title: '真实姓名'
+        },
+        {
+            field: 'comm_tenant_phone',
+            title: '手机号'
+        },
+        {
+            field: 'comm_tenant_phone',
+            title: '邮箱'
+        },
+        {
+            field: 'comm_tenant_phone',
+            title: '账户余额'
+        },
+        {
+            field: 'comm_tenant_phone',
+            title: '本月可提现次数'
         },
 //        {
 //            field: 'email',
@@ -33,23 +49,23 @@ $(function () {
 //            field: 'mobile',
 //            title: '手机'
 //        }, 
-        {
-            field: 'ifrootuser',
-            title: '超级管理员'
-        },
 //        {
-//            field: 'ssex',
-//            title: '性别',
-//            formatter: function (value, row, index) {
-//                if (value === '0') return '男';
-//                else if (value === '1') return '女';
-//                else return '保密';
-//            }
+//            field: 'ifrootuser',
+//            title: '超级管理员'
 //        },
         {
             field: 'crateTime',
             title: '创建时间'
-        }, {
+        },
+        {
+            field: 'status',
+            title: '是否已经实名',
+            formatter: function (value, row, index) {
+                if (value === '1') return '<span class="badge badge-success">是</span>';
+                if (value === '0') return '<span class="badge badge-warning">否</span>';
+            }
+        },
+        {
             field: 'status',
             title: '状态',
             formatter: function (value, row, index) {

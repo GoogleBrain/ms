@@ -20,27 +20,48 @@ $(function () {
         }, {
             field: 'username',
             title: '用户名'
-        }, {
-            field: 'deptName',
+        }, 
+        {
+            field: 'totalrebate',
             title: '部门'
-        }, {
-            field: 'email',
-            title: '邮箱'
-        }, {
+        },
+//        {
+//            field: 'totalamt',
+//            title: '邮箱'
+//        }, 
+        {
             field: 'mobile',
             title: '手机'
         }, {
             field: 'ssex',
-            title: '性别',
+            title: '用户类型',
             formatter: function (value, row, index) {
-                if (value === '0') return '男';
-                else if (value === '1') return '女';
-                else return '保密';
+                if (value === '0') return '普通用户';
+                else if (value === '1') return '市级代理';
+                else if (value === '2') return '省级代理';
+                else if (value === '3') return '总代理';
             }
-        }, {
+        },
+        {
+            field: 'crateTime',
+            title: '推荐人姓名'
+        },
+        {
+            field: 'crateTime',
+            title: '下级人数'
+        },
+        {
             field: 'crateTime',
             title: '创建时间'
-        }, {
+        },
+        {
+            field: 'status',
+            title: '是否已经实名',
+            formatter: function (value, row, index) {
+                if (value === '1') return '<span class="badge badge-success">是</span>';
+                if (value === '0') return '<span class="badge badge-warning">否</span>';
+            }
+        },{
             field: 'status',
             title: '状态',
             formatter: function (value, row, index) {
