@@ -40,7 +40,7 @@ public class GoodsController extends BaseController {
 	public String index(Model model) {
 		User user = super.getCurrentUser();
 		model.addAttribute("user", user);
-		return "system/goods/user";
+		return "system/goods/goods";
 	}
 
 	@RequestMapping("goods/checkUserName")
@@ -209,7 +209,7 @@ public class GoodsController extends BaseController {
 			user.setSsex("性别：保密");
 		}
 		model.addAttribute("user", user);
-		return "system/user/profile";
+		return "system/goods/goodsProfile";
 	}
 
 	@RequestMapping("goods/getUserProfile")
