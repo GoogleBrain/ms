@@ -7,10 +7,10 @@ $(function() {
             return {
                 pageSize: params.limit,
                 pageNum: params.offset / params.limit + 1,
-                keyy: $dictTableForm.find("input[name='keyy']").val().trim(),
-                valuee: $dictTableForm.find("input[name='valuee']").val().trim(),
-                tableName: $dictTableForm.find("input[name='tableName']").val().trim(),
-                fieldName: $dictTableForm.find("input[name='fieldName']").val().trim()
+//                keyy: $dictTableForm.find("input[name='keyy']").val().trim(),
+//                valuee: $dictTableForm.find("input[name='valuee']").val().trim(),
+//                tableName: $dictTableForm.find("input[name='tableName']").val().trim(),
+//                fieldName: $dictTableForm.find("input[name='fieldName']").val().trim()
             };
         },
         columns: [{
@@ -32,6 +32,9 @@ $(function() {
             }, {
                 field: 'fieldName',
                 title: '字段名'
+            },{
+                field: 'des',
+                title: '描述'
             }
         ]
     };

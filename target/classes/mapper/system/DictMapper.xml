@@ -10,5 +10,6 @@
     <result column="VALUE" jdbcType="VARCHAR" property="value" />
     <result column="FIELD_NAME" jdbcType="VARCHAR" property="fieldName" />
     <result column="TABLE_NAME" jdbcType="VARCHAR" property="tableName" />
+    <result column="DES" jdbcType="VARCHAR" property="des" />
   </resultMap>
 </mapper>

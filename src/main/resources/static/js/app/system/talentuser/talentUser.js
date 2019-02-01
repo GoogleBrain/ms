@@ -19,38 +19,27 @@ $(function () {
             visible: false
         }, {
             field: 'username',
-            title: '商户名'
-        },
-        {
-            field: 'front',
-            title: '正面',
-            formatter: function (value, row, index) {
-                 return "<a href='http://c.hiphotos.baidu.com/image/pic/item/908fa0ec08fa513d24237b3b306d55fbb3fbd94d.jpg' target='_blank'><img src='/img/avatar/20180414165855.jpg' /></a>";
-            }
-        },
-        {
-            field: 'back',
-            title: '反面'
+            title: '入驻商户名'
         },
         {
             field: 'email',
             title: '真实姓名'
         },
+//        {
+//            field: 'comm_tenant_phone',
+//            title: '手机号'
+//        },
         {
-            field: 'comm_tenant_phone',
-            title: '手机号'
+            field: 'front',
+            title: '身份证正面',
+        },
+        {
+            field: 'back',
+            title: '身份证反面'
         },
         {
             field: 'comm_tenant_phone',
-            title: '邮箱'
-        },
-        {
-            field: 'comm_tenant_phone',
-            title: '账户余额'
-        },
-        {
-            field: 'comm_tenant_phone',
-            title: '身份信息'
+            title: '账户可提现金额(元)'
         },
 //        {
 //            field: 'email',
@@ -78,7 +67,16 @@ $(function () {
         },
         {
             field: 'status',
-            title: '状态',
+            title: '账户状态',
+            formatter: function (value, row, index) {
+                if (value === '1') return '<span class="badge badge-success">有效</span>';
+                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+                if (value === '2') return '<span class="badge badge-warning">222</span>';
+            }
+        },
+        {
+            field: 'status',
+            title: '审核状态',
             formatter: function (value, row, index) {
                 if (value === '1') return '<span class="badge badge-success">有效</span>';
                 if (value === '0') return '<span class="badge badge-warning">锁定</span>';

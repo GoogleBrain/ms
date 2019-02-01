@@ -12,7 +12,7 @@ import com.google.common.base.MoreObjects;
 import cn.hu.common.annotation.ExportConfig;
 
 @Table(name = "t_dict")
-public class Dict implements Serializable{
+public class Dict implements Serializable {
 
 	private static final long serialVersionUID = 7780820231535870010L;
 
@@ -37,6 +37,18 @@ public class Dict implements Serializable{
 	@Column(name = "FIELD_NAME")
 	@ExportConfig(value = "列名")
 	private String fieldName;
+
+	@Column(name = "DES")
+	@ExportConfig(value = "描述")
+	private String des;
+
+	public String getDes() {
+		return des;
+	}
+
+	public void setDes(String des) {
+		this.des = des;
+	}
 
 	/**
 	 * @return DICT_ID
@@ -91,13 +103,8 @@ public class Dict implements Serializable{
 
 	@Override
 	public String toString() {
-		return MoreObjects.toStringHelper(this)
-				.add("dictId", dictId)
-				.add("keyy", keyy)
-				.add("valuee", valuee)
-				.add("tableName", tableName)
-				.add("fieldName", fieldName)
-				.toString();
+		return MoreObjects.toStringHelper(this).add("dictId", dictId).add("keyy", keyy).add("valuee", valuee)
+				.add("tableName", tableName).add("fieldName", fieldName).add("des", des).toString();
 	}
 
 	/**
