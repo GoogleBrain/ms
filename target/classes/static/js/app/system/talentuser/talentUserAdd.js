@@ -1,3 +1,4 @@
+$('.example img').zoomify();
 var validator;
 var $userAddForm = $("#user-add-form");
 var $rolesSelect = $userAddForm.find("select[name='rolesSelect']");

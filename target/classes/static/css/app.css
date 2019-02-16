@@ -5,7 +5,9 @@ html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
-
+.zoomify-shadow{
+	z-index: 1010!important;
+}
 body {
   margin: 0;
 }
@@ -4712,7 +4714,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1050;
+  z-index: 1020;
   display: none;
   overflow: hidden;
   outline: 0;
@@ -4754,7 +4756,7 @@ button.close {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 1040;
+  z-index: 1010;
   background-color: #000000;
 }
 .modal-backdrop.fade {

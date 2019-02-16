@@ -32,10 +32,16 @@ $(function () {
         {
             field: 'front',
             title: '身份证正面',
+            formatter: function () {
+                return '<img style="width:75px;height:40px;" src="http://5b0988e595225.cdn.sohucs.com/images/20171103/ac2da7fba0d447ff8565b81694b4da5d.jpeg" />'
+            }
         },
         {
             field: 'back',
-            title: '身份证反面'
+            title: '身份证反面',
+            formatter: function () {
+                return '<img style="width:75px;height:40px;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550331609491&di=b0d76eedaa3de2144a12fb8b03020a4a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20173_30_0%2Fa582am0432890537985.jpeg" />'
+            }
         },
         {
             field: 'comm_tenant_phone',
