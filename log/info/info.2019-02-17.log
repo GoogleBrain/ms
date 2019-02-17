@@ -1395,3 +1395,15 @@
 22:34:18.611 febs [http-nio-8080-exec-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.DeptMapper.selectByExample
 22:34:18.611 febs [http-nio-8080-exec-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 2 ms
 22:34:18.611 febs [http-nio-8080-exec-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT DEPT_ID,PARENT_ID,DEPT_NAME,ORDER_NUM,CREATE_TIME FROM t_dept order by dept_id
+22:34:47.949 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+22:34:47.951 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@175b9425: startup date [Sun Feb 17 16:15:11 CST 2019]; root of context hierarchy
+22:34:47.974 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+22:34:47.974 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+22:34:47.979 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+22:34:47.979 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+22:34:47.979 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+22:34:47.979 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+22:34:47.989 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+22:34:47.989 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+22:34:47.999 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+22:34:48.009 febs [RMI TCP Connection(2)-127.0.0.1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
