@@ -56,15 +56,16 @@ $(function () {
         {
             field: 'crateTime',
             title: '创建时间'
-        },
-        {
-            field: 'status',
-            title: '状态',
-            formatter: function (value, row, index) {
-                if (value === '1') return '<span class="badge badge-success">有效</span>';
-                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
-            }
         }
+//        ,
+//        {
+//            field: 'status',
+//            title: '状态',
+//            formatter: function (value, row, index) {
+//                if (value === '1') return '<span class="badge badge-success">有效</span>';
+//                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+//            }
+//        }
 
         ]
     };

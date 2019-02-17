@@ -21,10 +21,10 @@ $(function () {
             field: 'username',
             title: '用户名'
         }, 
-        {
-            field: 'totalrebate',
-            title: '部门'
-        },
+//        {
+//            field: 'totalrebate',
+//            title: '部门'
+//        },
 //        {
 //            field: 'totalamt',
 //            title: '邮箱'
@@ -44,7 +44,7 @@ $(function () {
         },
         {
             field: 'crateTime',
-            title: '推荐人姓名'
+            title: '推荐人'
         },
         {
             field: 'crateTime',
@@ -54,14 +54,15 @@ $(function () {
             field: 'crateTime',
             title: '创建时间'
         },
+//        {
+//            field: 'status',
+//            title: '是否已经实名',
+//            formatter: function (value, row, index) {
+//                if (value === '1') return '<span class="badge badge-success">是</span>';
+//                if (value === '0') return '<span class="badge badge-warning">否</span>';
+//            }
+//        },
         {
-            field: 'status',
-            title: '是否已经实名',
-            formatter: function (value, row, index) {
-                if (value === '1') return '<span class="badge badge-success">是</span>';
-                if (value === '0') return '<span class="badge badge-warning">否</span>';
-            }
-        },{
             field: 'status',
             title: '状态',
             formatter: function (value, row, index) {

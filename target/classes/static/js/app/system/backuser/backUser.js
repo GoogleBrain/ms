@@ -33,10 +33,10 @@ $(function () {
 //            field: 'mobile',
 //            title: '手机'
 //        }, 
-        {
-            field: 'ifrootuser',
-            title: '超级管理员'
-        },
+//        {
+//            field: 'ifrootuser',
+//            title: '超级管理员'
+//        },
 //        {
 //            field: 'ssex',
 //            title: '性别',

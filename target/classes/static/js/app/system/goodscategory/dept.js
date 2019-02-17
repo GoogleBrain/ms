@@ -49,7 +49,7 @@ function deleteDepts() {
     var ids = $("#deptTable").bootstrapTreeTable("getSelections");
     var ids_arr = "";
     if (!ids.length) {
-        $MB.n_warning("请勾选需要删除的部门！");
+        $MB.n_warning("请勾选需要删除的分类！");
         return;
     }
     for (var i = 0; i < ids.length; i++) {
@@ -57,7 +57,7 @@ function deleteDepts() {
         if (i !== (ids.length - 1)) ids_arr += ",";
     }
     $MB.confirm({
-        text: "确定删除选中部门？",
+        text: "确定删除选中分类？",
         confirmButtonText: "确定删除"
     }, function() {
         $.post(ctx + 'goodscategory/delete', { "ids": ids_arr }, function(r) {

@@ -29,14 +29,14 @@ $(function () {
 //            field: 'comm_tenant_phone',
 //            title: '手机号'
 //        },
-        {
-            field: 'front',
-            title: '身份证正面',
-        },
-        {
-            field: 'back',
-            title: '身份证反面'
-        },
+//        {
+//            field: 'front',
+//            title: '身份证正面',
+//        },
+//        {
+//            field: 'back',
+//            title: '身份证反面'
+//        },
         {
             field: 'comm_tenant_phone',
             title: '账户可提现金额(元)'

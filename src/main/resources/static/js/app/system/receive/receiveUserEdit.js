@@ -1,4 +1,4 @@
-function updateUser() {
+function updateUser(flag) {
     var selected = $("#userTable").bootstrapTable('getSelections');
     var selected_length = selected.length;
     if (!selected_length) {
@@ -17,7 +17,11 @@ function updateUser() {
             $form.modal();
             var user = r.msg;
             $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('修改用户');
+            $("#user-add-modal-title").html('收货地址');
+            
+            if(2==flag){
+            	$("input").attr("disabled",true);
+            }
             $form.find("input[name='username']").val(user.username).attr("readonly", true);
             $form.find("input[name='oldusername']").val(user.username);
             $form.find("input[name='userId']").val(user.userId);
