@@ -7,9 +7,9 @@ $(function () {
             return {
                 pageSize: params.limit,
                 pageNum: params.offset / params.limit + 1,
-                username: $userTableForm.find("input[name='username']").val().trim(),
-                ssex: $userTableForm.find("select[name='ssex']").val(),
-                status: $userTableForm.find("select[name='status']").val()
+                username: $userTableForm.find("input[name='username']").val().trim()
+//                ssex: $userTableForm.find("select[name='ssex']").val(),
+//                status: $userTableForm.find("select[name='status']").val()
             };
         },
         columns: [{
