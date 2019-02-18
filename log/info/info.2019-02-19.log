@@ -1,0 +1,12 @@
+00:00:20.303 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.DeptMapper.selectByExample
+00:00:20.305 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:00:20.305 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT DEPT_ID,PARENT_ID,DEPT_NAME,ORDER_NUM,CREATE_TIME FROM t_dept order by dept_id
+00:00:20.450 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample_COUNT
+00:00:20.450 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:00:20.457 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:00:20.458 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample
+00:00:20.458 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:00:20.458 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:00:20.645 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:00:20.645 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 9 ms
+00:00:20.645 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2085,'admin','获取用户信息',53,'cn.hu.system.controller.RechargeController.userList()','request: "QueryRequest{pageSize=10, pageNum=1}"  user: "User [userId=null, username=, password=null, deptId=null, deptName=null, front=null, back=null, email=null, mobile=null, status=, crateTime=null, modifyTime=null, lastLoginTime=null, ssex=, theme=null, avatar=null, description=null, roleName=null]"','127.0.0.1','2019-2-19 0:00:20','内网IP|0|0|内网IP|内网IP' )
