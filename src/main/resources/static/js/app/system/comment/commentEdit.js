@@ -10,16 +10,16 @@ function updateUser(flag) {
         return;
     }
     var userId = selected[0].userId;
-    $.post(ctx + "storage/getUser", {"userId": userId}, function (r) {
+    $.post(ctx + "comment/getUser", {"userId": userId}, function (r) {
         if (r.code === 0) {
             var $form = $('#user-add');
             var $deptTree = $('#deptTree');
             $form.modal();
             var user = r.msg;
             $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('库存明细');
+            $("#user-add-modal-title").html('商品评论');
             
-            if(flag==2){
+            if(2==flag){
             	$("input").attr("disabled",true);
             }
             $form.find("input[name='username']").val(user.username).attr("readonly", true);

@@ -1,7 +1,7 @@
 $(function () {
     var $userTableForm = $(".user-table-form");
     var settings = {
-        url: ctx + "goods/list",
+        url: ctx + "comment/list",
         pageSize: 10,
         queryParams: function (params) {
             return {
@@ -19,37 +19,37 @@ $(function () {
             visible: false
         }, {
             field: 'username',
-            title: '商品类别'
-        }, {
-            field: 'username',
-            title: '商品名称'
-        }, {
-            field: 'deptName',
-            title: '成本'
-        }, {
-            field: 'email',
-            title: '售价'
-        }, {
-            field: 'mobile',
-            title: '入库时间'
+            title: '商品编号'
+        }, 
+	      {
+	      field: 'email',
+	      title: '商品标题'
+	     }, 
+        {
+            field: 'realname',
+            title: '评论人'
+        },
+        {
+            field: 'comm_tenant_phone',
+            title: '评论时间'
         },
 //        {
-//            field: 'ssex',
-//            title: '性别',
-//            formatter: function (value, row, index) {
-//                if (value === '0') return '男';
-//                else if (value === '1') return '女';
-//                else return '保密';
-//            }
+//            field: 'email',
+//            title: '邮箱'
+//        }, 
+//        {
+//            field: 'mobile',
+//            title: '手机'
+//        }, 
+//        {
+//            field: 'ifrootuser',
+//            title: '超级管理员'
 //        },
-        {
-            field: 'crateTime',
-            title: '入库数量'
-        },
-        {
-            field: 'crateTime',
-            title: '库存总量'
-        },
+//        {
+//            field: 'crateTime',
+//            title: '创建时间'
+//        }
+//        ,
 //        {
 //            field: 'status',
 //            title: '状态',
@@ -79,7 +79,7 @@ function deleteUsers() {
     var selected_length = selected.length;
     var contain = false;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要删除的用户！');
+        $MB.n_warning('请勾选需要删除的评论！');
         return;
     }
     var ids = "";
@@ -94,10 +94,10 @@ function deleteUsers() {
     }
 
     $MB.confirm({
-        text: "确定删除选中用户？",
+        text: "确定删除选中评论？",
         confirmButtonText: "确定删除"
     }, function () {
-        $.post(ctx + 'goods/delete', {"ids": ids}, function (r) {
+        $.post(ctx + 'comment/delete', {"ids": ids}, function (r) {
             if (r.code === 0) {
                 $MB.n_success(r.msg);
                 refresh();
@@ -109,7 +109,7 @@ function deleteUsers() {
 }
 
 function exportUserExcel() {
-    $.post(ctx + "goods/excel", $(".user-table-form").serialize(), function (r) {
+    $.post(ctx + "comment/excel", $(".user-table-form").serialize(), function (r) {
         if (r.code === 0) {
             window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
         } else {
@@ -119,7 +119,7 @@ function exportUserExcel() {
 }
 
 function exportUserCsv() {
-    $.post(ctx + "goods/csv", $(".user-table-form").serialize(), function (r) {
+    $.post(ctx + "comment/csv", $(".user-table-form").serialize(), function (r) {
         if (r.code === 0) {
             window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
         } else {

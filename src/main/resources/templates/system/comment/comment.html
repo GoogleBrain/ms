@@ -1,5 +1,5 @@
 <div class="card">
-    <div data-th-include="system/storage/storageAdd"></div>
+    <div data-th-include="system/comment/commentAdd"></div>
     <div class="card-block">
         <div class="table-responsive">
             <div id="data-table_wrapper" class="dataTables_wrapper">
@@ -14,12 +14,12 @@
 <!-- 							(.csv) </a> -->
 <!--                         </ul> -->
 <!--                     </div> -->
-                    <div class="dropdown actions__item" shiro:hasAnyPermissions="storage:add,storage:delete,storage:update">
+                    <div class="dropdown actions__item" shiro:hasAnyPermissions="comment:add,comment:delete,comment:update">
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
-<!--                             <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="storage:add">新增用户</a> -->
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser(2)" shiro:hasPermission="storage:update">入库明细</a>
-<!--                             <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="storage:delete">删除用户</a> -->
+<!--                             <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="user:add">新增用户</a> -->
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser(2)" shiro:hasPermission="comment:update">查看详情</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="comment:delete">删除评论</a>
                         </div>
                     </div>
                 </div>
@@ -28,7 +28,7 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> 商品名称： </span>
+                                    <span class="input-group-addon"> 商品编号： </span>
                                     <div class="form-group">
                                         <input type="text" name="username" class="form-control"> <i class="form-group__bar"></i>
                                     </div>
@@ -66,5 +66,5 @@
         </div>
     </div>
 </div>
-<script data-th-src="@{js/app/system/storage/storage.js}"></script>
-<script data-th-src="@{js/app/system/storage/storageEdit.js}"></script>
+<script data-th-src="@{js/app/system/comment/comment.js}"></script>
+<script data-th-src="@{js/app/system/comment/commentEdit.js}"></script>

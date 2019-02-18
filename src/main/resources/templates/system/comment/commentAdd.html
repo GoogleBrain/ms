@@ -6,23 +6,11 @@
             </div>
             <div class="modal-body">
                 <form id="user-add-form">
-                     <div class="row">
-                        <div class="col-sm-11">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-					               	 商品类别：
-					            </span>
-                                <div class="form-group">
-                                    <input type="text" name="email" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="row">
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 商品名称：
+					               	 商品编号：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="username" class="form-control">
@@ -32,11 +20,23 @@
                             </div>
                         </div>
                     </div>
+<!--                     <div class="row user_password"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	 密码： -->
+<!-- 					            </span> -->
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" name="password" value="123456" readonly class="form-control"> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
                     <div class="row">
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 成本：
+					               	 商品标题：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control">
@@ -48,7 +48,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 售价：
+					               	 评论人：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control">
@@ -60,10 +60,10 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 入库时间：
+					               	评论时间：
 					            </span>
                                 <div class="form-group">
-                                    <input type="text" name="mobile" class="form-control">
+                                    <input type="text" name="email" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -72,7 +72,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 入库数量：
+					               	评论内容：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="mobile" class="form-control">
@@ -80,18 +80,83 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-sm-11">
-                            <div class="input-group">
-                                <span class="input-group-addon">
-					               	 库存总数量：
-					            </span>
-                                <div class="form-group">
-                                    <input type="text" name="mobile" class="form-control">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                     <div class="row"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	 详细地址： -->
+<!-- 					            </span> -->
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" name="mobile" class="form-control"> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="row"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	 收件人姓名： -->
+<!-- 					            </span> -->
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" name="mobile" class="form-control"> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="row"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	 收件人手机号： -->
+<!-- 					            </span> -->
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" name="mobile" class="form-control"> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="row"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	创建时间： -->
+<!-- 					            </span> -->
+<!--                                 <div class="form-group"> -->
+<!--                                     <input type="text" name="mobile" class="form-control"> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="row"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	 角色： -->
+<!-- 					             </span> -->
+<!--                                 <div class="form-group"> -->
+<!--                                     <select multiple="multiple" name="rolesSelect"></select> -->
+<!--                                     <input name="roles" hidden/> -->
+<!--                                 </div> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
+<!--                     <div class="row"> -->
+<!--                         <div class="col-sm-11"> -->
+<!--                             <div class="input-group" style="margin-top:10px;"> -->
+<!--                                 <span class="input-group-addon"> -->
+<!-- 					               	是否已经实名： -->
+<!-- 					             </span> -->
+<!--                                 <div class="toggle-switch"> -->
+<!--                                     <input type="checkbox" name="status" checked class="toggle-switch__checkbox"> -->
+<!--                                     <i class="toggle-switch__helper"></i> -->
+<!--                                 </div> -->
+<!--                                 <span class="input-group-addon" id="status" style="margin-left: 10px;"> -->
+<!-- 	                                 	实名 -->
+<!-- 						             </span> -->
+<!--                             </div> -->
+<!--                         </div> -->
+<!--                     </div> -->
 <!--                     <div class="row"> -->
 <!--                         <div class="col-sm-11"> -->
 <!--                             <div class="input-group" style="margin-top:10px;"> -->
@@ -134,7 +199,7 @@
 <!--                             </div> -->
 <!--                         </div> -->
 <!--                     </div> -->
-                    <div class="row"   style="display: none;">
+                    <div class="row"  style="display: none;">
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon" style="justify-content: flex-start;margin-top: .5rem;">
@@ -157,4 +222,4 @@
         </div>
     </div>
 </div>
-<script data-th-src="@{js/app/system/storage/storageAdd.js}"></script>
+<script data-th-src="@{js/app/system/comment/commentAdd.js}"></script>
