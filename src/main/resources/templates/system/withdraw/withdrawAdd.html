@@ -24,7 +24,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 密码：
+					               	 金额：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="password" value="123456" readonly class="form-control">
@@ -36,7 +36,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 邮箱：
+					               	 提现方式：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control">
@@ -48,7 +48,7 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 手机：
+					               	 到账账号：
 					            </span>
                                 <div class="form-group">
                                     <input type="text" name="mobile" class="form-control">
@@ -60,11 +60,34 @@
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon">
-					               	 角色：
-					             </span>
+					               	 汇款方式：
+					            </span>
                                 <div class="form-group">
-                                    <select multiple="multiple" name="rolesSelect"></select>
-                                    <input name="roles" hidden/>
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 汇款单号：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 创建时间：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
                                 </div>
                             </div>
                         </div>
@@ -73,15 +96,26 @@
                         <div class="col-sm-11">
                             <div class="input-group" style="margin-top:10px;">
                                 <span class="input-group-addon">
-					               	状态：
+					               	审核状态：
 					             </span>
-                                <div class="toggle-switch">
-                                    <input type="checkbox" name="status" checked class="toggle-switch__checkbox">
-                                    <i class="toggle-switch__helper"></i>
+                                <select class="form-control" name="type">
+                                        <option value="" selected>请选择</option>
+                                        <option value="0">通过</option>
+                                        <option value="0">未通过</option>
+                                        <option value="1">待审核</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 审核备注：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
                                 </div>
-                                <span class="input-group-addon" id="status" style="margin-left: 10px;">
-	                                 	可用
-						             </span>
                             </div>
                         </div>
                     </div>
@@ -89,29 +123,30 @@
                         <div class="col-sm-11">
                             <div class="input-group" style="margin-top:10px;">
                                 <span class="input-group-addon">
-					               	性别：
+					               	提现状态：
 					             </span>
-                                <div class="form-group">
-                                    <label class="custom-control custom-radio">
-                                        <input name="ssex" type="radio" value="0" class="custom-control-input">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">男</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input name="ssex" type="radio" value="1" class="custom-control-input">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">女</span>
-                                    </label>
-                                    <label class="custom-control custom-radio">
-                                        <input name="ssex" type="radio" value="2" class="custom-control-input">
-                                        <span class="custom-control-indicator"></span>
-                                        <span class="custom-control-description">保密</span>
-                                    </label>
-                                </div>
+                                <select class="form-control" name="type">
+                                        <option value="" selected>请选择</option>
+                                        <option value="0">成功</option>
+                                        <option value="0">失败</option>
+                                        <option value="1">处理中</option>
+                                </select>
                             </div>
                         </div>
                     </div>
                     <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 提现备注：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="display: none;">
                         <div class="col-sm-11">
                             <div class="input-group">
                                 <span class="input-group-addon" style="justify-content: flex-start;margin-top: .5rem;">
@@ -134,4 +169,4 @@
         </div>
     </div>
 </div>
-<script data-th-src="@{js/app/system/withdraw/userAdd.js}"></script>
+<script data-th-src="@{js/app/system/withdraw/withdrawAdd.js}"></script>

@@ -2,11 +2,11 @@ function updateUser() {
     var selected = $("#userTable").bootstrapTable('getSelections');
     var selected_length = selected.length;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要修改的用户！');
+        $MB.n_warning('请勾选需要修改的提现！');
         return;
     }
     if (selected_length > 1) {
-        $MB.n_warning('一次只能修改一个用户！');
+        $MB.n_warning('一次只能修改一个提现！');
         return;
     }
     var userId = selected[0].userId;
@@ -17,7 +17,7 @@ function updateUser() {
             $form.modal();
             var user = r.msg;
             $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('修改用户');
+            $("#user-add-modal-title").html('提现详情');
             $form.find("input[name='username']").val(user.username).attr("readonly", true);
             $form.find("input[name='oldusername']").val(user.username);
             $form.find("input[name='userId']").val(user.userId);

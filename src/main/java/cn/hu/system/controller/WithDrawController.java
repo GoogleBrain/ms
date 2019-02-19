@@ -36,7 +36,7 @@ public class WithDrawController extends BaseController {
     public String index(Model model) {
         User user = super.getCurrentUser();
         model.addAttribute("user", user);
-        return "system/withdraw/user";
+        return "system/withdraw/withdraw";
     }
 
     @RequestMapping("withdraw/checkUserName")
@@ -205,7 +205,7 @@ public class WithDrawController extends BaseController {
             user.setSsex("性别：保密");
         }
         model.addAttribute("user", user);
-        return "system/withdraw/profile";
+        return "system/withdraw/withdrawprofile";
     }
 
     @RequestMapping("withdraw/getUserProfile")

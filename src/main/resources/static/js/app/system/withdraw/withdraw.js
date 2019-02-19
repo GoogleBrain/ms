@@ -22,27 +22,39 @@ $(function () {
             title: '用户名'
         }, {
             field: 'deptName',
-            title: '部门'
+            title: '金额'
         }, {
             field: 'email',
-            title: '邮箱'
+            title: '提现方式'
         }, {
             field: 'mobile',
-            title: '手机'
-        }, {
-            field: 'ssex',
-            title: '性别',
-            formatter: function (value, row, index) {
-                if (value === '0') return '男';
-                else if (value === '1') return '女';
-                else return '保密';
-            }
-        }, {
+            title: '到账账号'
+        }, 
+//        {
+//            field: 'ssex',
+//            title: '性别',
+//            formatter: function (value, row, index) {
+//                if (value === '0') return '男';
+//                else if (value === '1') return '女';
+//                else return '保密';
+//            }
+//        },
+        {
             field: 'crateTime',
             title: '创建时间'
-        }, {
+        },
+        {
             field: 'status',
-            title: '状态',
+            title: '审核状态',
+            formatter: function (value, row, index) {
+                if (value === '1') return '<span class="badge badge-success">有效</span>';
+                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+            }
+        },
+        {
+            field: 'status',
+            title: '提现状态',
             formatter: function (value, row, index) {
                 if (value === '1') return '<span class="badge badge-success">有效</span>';
                 if (value === '0') return '<span class="badge badge-warning">锁定</span>';
@@ -69,7 +81,7 @@ function deleteUsers() {
     var selected_length = selected.length;
     var contain = false;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要删除的用户！');
+        $MB.n_warning('请勾选需要删除的提现！');
         return;
     }
     var ids = "";

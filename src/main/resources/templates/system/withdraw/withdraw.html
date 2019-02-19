@@ -1,5 +1,5 @@
 <div class="card">
-    <div data-th-include="system/withdraw/userAdd"></div>
+    <div data-th-include="system/withdraw/withdrawAdd"></div>
     <div class="card-block">
         <div class="table-responsive">
             <div id="data-table_wrapper" class="dataTables_wrapper">
@@ -18,7 +18,7 @@
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
                             <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="withdraw:add">新增用户</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser()" shiro:hasPermission="withdraw:update">修改用户</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser()" shiro:hasPermission="withdraw:update">提现操作</a>
                             <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="withdraw:delete">删除用户</a>
                         </div>
                     </div>
@@ -66,5 +66,5 @@
         </div>
     </div>
 </div>
-<script data-th-src="@{js/app/system/withdraw/user.js}"></script>
-<script data-th-src="@{js/app/system/withdraw/userEdit.js}"></script>
+<script data-th-src="@{js/app/system/withdraw/withdraw.js}"></script>
+<script data-th-src="@{js/app/system/withdraw/withdrawEdit.js}"></script>
