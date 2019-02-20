@@ -37,7 +37,7 @@ public class RebateController extends BaseController {
     public String index(Model model) {
         User user = super.getCurrentUser();
         model.addAttribute("user", user);
-        return "system/rebate/user";
+        return "system/rebate/rebate";
     }
 
     @RequestMapping("rebate/checkUserName")
@@ -206,7 +206,7 @@ public class RebateController extends BaseController {
             user.setSsex("性别：保密");
         }
         model.addAttribute("user", user);
-        return "system/rebate/profile";
+        return "system/rebate/rebateprofile";
     }
 
     @RequestMapping("rebate/getUserProfile")
