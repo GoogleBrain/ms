@@ -16,39 +16,49 @@ $(function () {
             checkbox: true
         }, {
             field: 'userId',
-            visible: false
+            visible: '订单号'
         }, {
             field: 'username',
             title: '用户名'
         }, {
             field: 'deptName',
-            title: '部门'
-        }, {
-            field: 'email',
-            title: '邮箱'
-        }, {
-            field: 'mobile',
-            title: '手机'
-        }, {
-            field: 'ssex',
-            title: '性别',
+            title: '总金额'
+        },
+        {
+            field: 'status',
+            title: '支付状态',
             formatter: function (value, row, index) {
-                if (value === '0') return '男';
-                else if (value === '1') return '女';
-                else return '保密';
+                if (value === '1') return '<span class="badge badge-success">支付成功</span>';
+                if (value === '0') return '<span class="badge badge-warning">待支付</span>';
             }
-        }, {
+        },
+        {
+            field: 'status',
+            title: '快递状态',
+            formatter: function (value, row, index) {
+                if (value === '1') return '<span class="badge badge-success">暂无</span>';
+                if (value === '0') return '<span class="badge badge-warning">派件中</span>';
+            }
+        },
+//        {
+//            field: 'email',
+//            title: '邮箱'
+//        }, {
+//            field: 'mobile',
+//            title: '手机'
+//        }, {
+//            field: 'ssex',
+//            title: '性别',
+//            formatter: function (value, row, index) {
+//                if (value === '0') return '男';
+//                else if (value === '1') return '女';
+//                else return '保密';
+//            }
+//        }, 
+        {
             field: 'crateTime',
             title: '创建时间'
-        }, {
-            field: 'status',
-            title: '状态',
-            formatter: function (value, row, index) {
-                if (value === '1') return '<span class="badge badge-success">有效</span>';
-                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
-            }
-        }
-
+        }, 
         ]
     };
 
