@@ -10,14 +10,14 @@ function updateUser() {
         return;
     }
     var userId = selected[0].userId;
-    $.post(ctx + "user/getUser", {"userId": userId}, function (r) {
+    $.post(ctx + "goods/getUser", {"userId": userId}, function (r) {
         if (r.code === 0) {
             var $form = $('#user-add');
             var $deptTree = $('#deptTree');
             $form.modal();
             var user = r.msg;
             $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('修改用户');
+            $("#user-add-modal-title").html('修改商品信息');
             $form.find("input[name='username']").val(user.username).attr("readonly", true);
             $form.find("input[name='oldusername']").val(user.username);
             $form.find("input[name='userId']").val(user.userId);

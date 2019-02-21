@@ -16,7 +16,7 @@ $(function () {
             checkbox: true
         }, {
             field: 'userId',
-            visible: '订单号'
+            title: '订单号'
         }, {
             field: 'username',
             title: '用户名'

@@ -19,33 +19,35 @@ $(function () {
             visible: false
         }, {
             field: 'username',
-            title: '用户名'
+            title: '商品分类'
         }, {
             field: 'deptName',
-            title: '部门'
+            title: '商品名'
         }, {
             field: 'email',
-            title: '邮箱'
+            title: '库存量'
         }, {
             field: 'mobile',
-            title: '手机'
-        }, {
-            field: 'ssex',
-            title: '性别',
-            formatter: function (value, row, index) {
-                if (value === '0') return '男';
-                else if (value === '1') return '女';
-                else return '保密';
-            }
-        }, {
-            field: 'crateTime',
-            title: '创建时间'
-        }, {
+            title: '发布时间'
+        }, 
+//        {
+//            field: 'ssex',
+//            title: '性别',
+//            formatter: function (value, row, index) {
+//                if (value === '0') return '男';
+//                else if (value === '1') return '女';
+//                else return '保密';
+//            }
+//        }, {
+//            field: 'crateTime',
+//            title: '创建时间'
+//        }, 
+        {
             field: 'status',
             title: '状态',
             formatter: function (value, row, index) {
                 if (value === '1') return '<span class="badge badge-success">有效</span>';
-                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+                if (value === '0') return '<span class="badge badge-warning">冻结</span>';
             }
         }
 

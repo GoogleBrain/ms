@@ -17,9 +17,9 @@
                     <div class="dropdown actions__item" shiro:hasAnyPermissions="goods:add,goods:delete,goods:update">
                         <i data-toggle="dropdown" class="zmdi zmdi-more-vert"></i>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="goods:add">新增用户</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser()" shiro:hasPermission="goods:update">修改用户</a>
-                            <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="goods:delete">删除用户</a>
+                            <a href="javascript:void(0)" class="dropdown-item" data-toggle="modal" data-target="#user-add" shiro:hasPermission="goods:add">新增商品</a>
+                            <a href="javascript:void(0)" class="dropdown-item" onclick="updateUser()" shiro:hasPermission="goods:update">修改商品</a>
+<!--                             <a href="javascript:void(0)" class="dropdown-item" onclick="deleteUsers()" shiro:hasPermission="goods:delete">删除用户</a> -->
                         </div>
                     </div>
                 </div>
@@ -28,31 +28,31 @@
                         <div class="row">
                             <div class="col-sm-3">
                                 <div class="input-group">
-                                    <span class="input-group-addon"> 用户名： </span>
+                                    <span class="input-group-addon"> 商品名： </span>
                                     <div class="form-group">
                                         <input type="text" name="username" class="form-control"> <i class="form-group__bar"></i>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-3">
-                                <div class="input-group">
-                                    <span class="input-group-addon"> 性别： </span>
-                                    <div class="form-group">
-                                        <select class="form-control" name="ssex">
-                                            <option value="" selected>所有</option>
-                                            <option value="0">男</option>
-                                            <option value="1">女</option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
+<!--                             <div class="col-sm-3"> -->
+<!--                                 <div class="input-group"> -->
+<!--                                     <span class="input-group-addon"> 性别： </span> -->
+<!--                                     <div class="form-group"> -->
+<!--                                         <select class="form-control" name="ssex"> -->
+<!--                                             <option value="" selected>所有</option> -->
+<!--                                             <option value="0">男</option> -->
+<!--                                             <option value="1">女</option> -->
+<!--                                         </select> -->
+<!--                                     </div> -->
+<!--                                 </div> -->
+<!--                             </div> -->
                             <div class="col-sm-3">
                                 <div class="input-group">
                                     <span class="input-group-addon"> 状态： </span>
                                     <div class="form-group">
                                         <select class="form-control" name="status">
                                             <option value="" selected>所有</option>
-                                            <option value="0">锁定</option>
+                                            <option value="0">冻结</option>
                                             <option value="1">有效</option>
                                         </select>
                                     </div>
