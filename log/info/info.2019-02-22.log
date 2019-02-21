@@ -1,0 +1,105 @@
+00:08:39.026 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:08:39.031 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 11 ms
+00:08:39.031 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2287,'admin','访问系统',0,'cn.hu.system.controller.LoginController.index()','user: "User [userId=4, username=admin, password=13bfb9844ba36ac930ba142d8c3db629, deptId=5, deptName=null, front=11, back=222, email=googlebrain@163.com, mobile=17600313199, status=1, crateTime=Sun Jan 27 23:47:19 CST 2019, modifyTime=Wed Feb 20 23:01:48 CST 2019, lastLoginTime=Wed Feb 20 23:22:48 CST 2019, ssex=0, theme=green, avatar=20180414165855.jpg, description=天下为公, roleName=null]"  org.springframework.validation.BindingResult.user: "org.springframework.validation.BeanPropertyBindingResult: 0 errors"','127.0.0.1','2019-2-22 0:08:39','内网IP|0|0|内网IP|内网IP' )
+00:08:39.302 febs [http-nio-8080-exec-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.MenuMapper.findUserMenus
+00:08:39.303 febs [http-nio-8080-exec-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 19 ms
+00:08:39.303 febs [http-nio-8080-exec-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on(rm.role_id = r.role_id) left join t_user_role ur on(ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.create_time
+00:08:43.421 febs [http-nio-8080-exec-10] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.DeptMapper.selectByExample
+00:08:43.421 febs [http-nio-8080-exec-10] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:08:43.421 febs [http-nio-8080-exec-10] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT DEPT_ID,PARENT_ID,DEPT_NAME,ORDER_NUM,CREATE_TIME FROM t_dept order by dept_id
+00:08:43.508 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample_COUNT
+00:08:43.508 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:08:43.508 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:08:43.509 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample
+00:08:43.509 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:08:43.509 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:08:44.008 febs [asyncTaskExecutor-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:08:44.008 febs [asyncTaskExecutor-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 10 ms
+00:08:44.008 febs [asyncTaskExecutor-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2288,'admin','获取用户信息',163,'cn.hu.system.controller.GoodsController.userList()','request: "QueryRequest{pageSize=10, pageNum=1}"  user: "User [userId=null, username=, password=null, deptId=null, deptName=null, front=null, back=null, email=null, mobile=null, status=, crateTime=null, modifyTime=null, lastLoginTime=null, ssex=null, theme=null, avatar=null, description=null, roleName=null]"','127.0.0.1','2019-2-22 0:08:44','内网IP|0|0|内网IP|内网IP' )
+00:08:50.726 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.UserMapper.findUserWithRole
+00:08:50.726 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:08:50.726 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select u.user_id userId,u.username,u.dept_id deptId,u.email,u.mobile, u.status,u.ssex,ur.role_id roleId from t_user u left join t_user_role ur on (u.user_id = ur.user_id) where u.user_id = 4
+00:09:28.627 febs [http-nio-8080-exec-10] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.UserMapper.findUserWithRole
+00:09:28.627 febs [http-nio-8080-exec-10] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:09:28.627 febs [http-nio-8080-exec-10] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select u.user_id userId,u.username,u.dept_id deptId,u.email,u.mobile, u.status,u.ssex,ur.role_id roleId from t_user u left join t_user_role ur on (u.user_id = ur.user_id) where u.user_id = 4
+00:14:22.134 febs [asyncTaskExecutor-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:14:22.135 febs [asyncTaskExecutor-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 11 ms
+00:14:22.135 febs [asyncTaskExecutor-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2289,'admin','访问系统',0,'cn.hu.system.controller.LoginController.index()','user: "User [userId=4, username=admin, password=13bfb9844ba36ac930ba142d8c3db629, deptId=5, deptName=null, front=11, back=222, email=googlebrain@163.com, mobile=17600313199, status=1, crateTime=Sun Jan 27 23:47:19 CST 2019, modifyTime=Wed Feb 20 23:01:48 CST 2019, lastLoginTime=Wed Feb 20 23:22:48 CST 2019, ssex=0, theme=green, avatar=20180414165855.jpg, description=天下为公, roleName=null]"  org.springframework.validation.BindingResult.user: "org.springframework.validation.BeanPropertyBindingResult: 0 errors"','127.0.0.1','2019-2-22 0:14:22','内网IP|0|0|内网IP|内网IP' )
+00:14:22.413 febs [http-nio-8080-exec-9] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.MenuMapper.findUserMenus
+00:14:22.413 febs [http-nio-8080-exec-9] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 20 ms
+00:14:22.413 febs [http-nio-8080-exec-9] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on(rm.role_id = r.role_id) left join t_user_role ur on(ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.create_time
+00:14:39.322 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.DeptMapper.selectByExample
+00:14:39.322 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 2 ms
+00:14:39.322 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT DEPT_ID,PARENT_ID,DEPT_NAME,ORDER_NUM,CREATE_TIME FROM t_dept order by dept_id
+00:14:39.437 febs [http-nio-8080-exec-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample_COUNT
+00:14:39.437 febs [http-nio-8080-exec-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:14:39.437 febs [http-nio-8080-exec-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:14:39.439 febs [http-nio-8080-exec-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample
+00:14:39.439 febs [http-nio-8080-exec-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 2 ms
+00:14:39.439 febs [http-nio-8080-exec-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:14:39.952 febs [asyncTaskExecutor-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:14:39.952 febs [asyncTaskExecutor-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 9 ms
+00:14:39.952 febs [asyncTaskExecutor-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2290,'admin','获取用户信息',178,'cn.hu.system.controller.GoodsController.userList()','request: "QueryRequest{pageSize=10, pageNum=1}"  user: "User [userId=null, username=, password=null, deptId=null, deptName=null, front=null, back=null, email=null, mobile=null, status=, crateTime=null, modifyTime=null, lastLoginTime=null, ssex=null, theme=null, avatar=null, description=null, roleName=null]"','127.0.0.1','2019-2-22 0:14:39','内网IP|0|0|内网IP|内网IP' )
+00:14:42.944 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.UserMapper.findUserWithRole
+00:14:42.944 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:14:42.944 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select u.user_id userId,u.username,u.dept_id deptId,u.email,u.mobile, u.status,u.ssex,ur.role_id roleId from t_user u left join t_user_role ur on (u.user_id = ur.user_id) where u.user_id = 4
+00:17:06.341 febs [asyncTaskExecutor-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:17:06.341 febs [asyncTaskExecutor-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 9 ms
+00:17:06.341 febs [asyncTaskExecutor-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2291,'admin','访问系统',0,'cn.hu.system.controller.LoginController.index()','user: "User [userId=4, username=admin, password=13bfb9844ba36ac930ba142d8c3db629, deptId=5, deptName=null, front=11, back=222, email=googlebrain@163.com, mobile=17600313199, status=1, crateTime=Sun Jan 27 23:47:19 CST 2019, modifyTime=Wed Feb 20 23:01:48 CST 2019, lastLoginTime=Wed Feb 20 23:22:48 CST 2019, ssex=0, theme=green, avatar=20180414165855.jpg, description=天下为公, roleName=null]"  org.springframework.validation.BindingResult.user: "org.springframework.validation.BeanPropertyBindingResult: 0 errors"','127.0.0.1','2019-2-22 0:17:06','内网IP|0|0|内网IP|内网IP' )
+00:17:06.616 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.MenuMapper.findUserMenus
+00:17:06.616 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 20 ms
+00:17:06.616 febs [http-nio-8080-exec-8] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on(rm.role_id = r.role_id) left join t_user_role ur on(ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.create_time
+00:17:11.423 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.DeptMapper.selectByExample
+00:17:11.423 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:11.423 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT DEPT_ID,PARENT_ID,DEPT_NAME,ORDER_NUM,CREATE_TIME FROM t_dept order by dept_id
+00:17:12.073 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample_COUNT
+00:17:12.073 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 2 ms
+00:17:12.073 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:17:12.075 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample
+00:17:12.075 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:12.075 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:17:12.079 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:17:12.079 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 10 ms
+00:17:12.079 febs [asyncTaskExecutor-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2292,'admin','获取用户信息',200,'cn.hu.system.controller.GoodsController.userList()','request: "QueryRequest{pageSize=10, pageNum=1}"  user: "User [userId=null, username=, password=null, deptId=null, deptName=null, front=null, back=null, email=null, mobile=null, status=, crateTime=null, modifyTime=null, lastLoginTime=null, ssex=null, theme=null, avatar=null, description=null, roleName=null]"','127.0.0.1','2019-2-22 0:17:12','内网IP|0|0|内网IP|内网IP' )
+00:17:14.629 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.UserMapper.findUserWithRole
+00:17:14.629 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:14.629 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select u.user_id userId,u.username,u.dept_id deptId,u.email,u.mobile, u.status,u.ssex,ur.role_id roleId from t_user u left join t_user_role ur on (u.user_id = ur.user_id) where u.user_id = 4
+00:17:45.318 febs [asyncTaskExecutor-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:17:45.318 febs [asyncTaskExecutor-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 9 ms
+00:17:45.318 febs [asyncTaskExecutor-3] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2293,'admin','访问系统',0,'cn.hu.system.controller.LoginController.index()','user: "User [userId=4, username=admin, password=13bfb9844ba36ac930ba142d8c3db629, deptId=5, deptName=null, front=11, back=222, email=googlebrain@163.com, mobile=17600313199, status=1, crateTime=Sun Jan 27 23:47:19 CST 2019, modifyTime=Wed Feb 20 23:01:48 CST 2019, lastLoginTime=Wed Feb 20 23:22:48 CST 2019, ssex=0, theme=green, avatar=20180414165855.jpg, description=天下为公, roleName=null]"  org.springframework.validation.BindingResult.user: "org.springframework.validation.BeanPropertyBindingResult: 0 errors"','127.0.0.1','2019-2-22 0:17:45','内网IP|0|0|内网IP|内网IP' )
+00:17:45.599 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.MenuMapper.findUserMenus
+00:17:45.599 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 23 ms
+00:17:45.599 febs [http-nio-8080-exec-7] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select m.* from t_menu m where m.type <> 1 and m.MENU_ID in (select distinct rm.menu_id from t_role_menu rm left join t_role r on(rm.role_id = r.role_id) left join t_user_role ur on(ur.role_id = r.role_id) left join t_user u on (u.user_id = ur.user_id) where u.username = 'admin') order by m.create_time
+00:17:49.936 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.findUserRole
+00:17:49.936 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:49.936 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select r.* from t_role r left join t_user_role ur on(r.role_id = ur.role_id) left join t_user u on(u.user_id = ur.user_id) where u.username = 'admin'
+00:17:49.938 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.MenuMapper.findUserPermissions
+00:17:49.938 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:49.938 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select m.perms from t_role r left join t_user_role ur on(r.role_id = ur.role_id) left join t_user u on(u.user_id = ur.user_id) left join t_role_menu rm on(rm.role_id = r.role_id) left join t_menu m on(m.menu_id = rm.menu_id ) where u.username = 'admin' and m.perms is not null and m.perms <> ''
+00:17:50.635 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.DeptMapper.selectByExample
+00:17:50.635 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:50.635 febs [http-nio-8080-exec-2] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT DEPT_ID,PARENT_ID,DEPT_NAME,ORDER_NUM,CREATE_TIME FROM t_dept order by dept_id
+00:17:50.744 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample_COUNT
+00:17:50.744 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:50.744 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:17:50.745 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.RoleMapper.selectByExample
+00:17:50.745 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:17:50.745 febs [http-nio-8080-exec-5] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> SELECT ROLE_ID,ROLE_NAME,REMARK,CREATE_TIME,MODIFY_TIME FROM t_role order by create_time
+00:17:50.998 febs [asyncTaskExecutor-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.LogMapper.insert
+00:17:50.998 febs [asyncTaskExecutor-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 3 ms
+00:17:50.998 febs [asyncTaskExecutor-4] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> INSERT INTO t_log ( ID,USERNAME,OPERATION,TIME,METHOD,PARAMS,IP,CREATE_TIME,LOCATION ) VALUES( 2294,'admin','获取用户信息',58,'cn.hu.system.controller.GoodsController.userList()','request: "QueryRequest{pageSize=10, pageNum=1}"  user: "User [userId=null, username=, password=null, deptId=null, deptName=null, front=null, back=null, email=null, mobile=null, status=, crateTime=null, modifyTime=null, lastLoginTime=null, ssex=null, theme=null, avatar=null, description=null, roleName=null]"','127.0.0.1','2019-2-22 0:17:50','内网IP|0|0|内网IP|内网IP' )
+00:18:05.266 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句Id】>>>> cn.hu.system.dao.UserMapper.findUserWithRole
+00:18:05.266 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句耗时】>>>> 1 ms
+00:18:05.266 febs [http-nio-8080-exec-1] INFO  c.h.c.i.SqlStatementInterceptor - 【SQL语句】>>>> select u.user_id userId,u.username,u.dept_id deptId,u.email,u.mobile, u.status,u.ssex,ur.role_id roleId from t_user u left join t_user_role ur on (u.user_id = ur.user_id) where u.user_id = 4
+00:18:12.287 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin - Application shutdown requested.
+00:18:12.287 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@175b9425: startup date [Thu Feb 21 22:35:33 CST 2019]; root of context hierarchy
+00:18:12.301 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.c.s.DefaultLifecycleProcessor - Stopping beans in phase 2147483647
+00:18:12.302 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+00:18:12.303 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.quartz.SchedulerFactoryBean - Shutting down Quartz Scheduler
+00:18:12.303 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutting down.
+00:18:12.303 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED paused.
+00:18:12.304 febs [RMI TCP Connection(2)-127.0.0.1] INFO  org.quartz.core.QuartzScheduler - Scheduler quartzScheduler_$_NON_CLUSTERED shutdown complete.
+00:18:12.315 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans on shutdown
+00:18:12.327 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter - Unregistering JMX-exposed beans
+00:18:12.328 febs [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.s.c.ThreadPoolTaskExecutor - Shutting down ExecutorService 'taskExecutor'
+00:18:12.392 febs [RMI TCP Connection(2)-127.0.0.1] INFO  c.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
