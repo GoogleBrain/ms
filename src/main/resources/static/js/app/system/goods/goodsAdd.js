@@ -2,6 +2,10 @@ var validator;
 var $userAddForm = $("#user-add-form");
 var $rolesSelect = $userAddForm.find("select[name='rolesSelect']");
 var $roles = $userAddForm.find("input[name='roles']");
+var E = window.wangEditor
+var editor = new E('#editor')
+// 或者 var editor = new E( document.getElementById('editor') )
+editor.create()
 
 $(function () {
     validateRule();

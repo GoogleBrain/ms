@@ -113,12 +113,28 @@
                                 <div class="form-group">
                                     <!-- <img style="width:150px;height:80px;" src="http://5b0988e595225.cdn.sohucs.com/images/20171103/ac2da7fba0d447ff8565b81694b4da5d.jpeg" /> -->
                                     <!-- <img style="width:150px;height:80px;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550331609491&di=b0d76eedaa3de2144a12fb8b03020a4a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20173_30_0%2Fa582am0432890537985.jpeg" /> -->
-                                	<div class="example" style="display:inline-block;width:150px;height:80px;">
+                                	<!-- <div class="example" style="display:inline-block;width:150px;height:80px;">
 										<p style="display:inline-block;width:150px;height:80px;"><img style="width:100%;height:100%;" src="http://5b0988e595225.cdn.sohucs.com/images/20171103/ac2da7fba0d447ff8565b81694b4da5d.jpeg" class="img-rounded" alt=""></p>
 									</div>
 									<div class="example" style="display:inline-block;width:150px;height:80px;">
 										<p style="display:inline-block;width:150px;height:80px;"><img style="width:100%;height:100%;" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1550331609491&di=b0d76eedaa3de2144a12fb8b03020a4a&imgtype=0&src=http%3A%2F%2Fs9.rr.itc.cn%2Fr%2FwapChange%2F20173_30_0%2Fa582am0432890537985.jpeg" class="img-rounded" alt=""></p>
-									</div>
+									</div> -->
+                                    <div class="item">
+                                        <img class="addImg" onclick="clickImg(this);" src="/img/upload/addImg.png" />
+                                        <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                        <div class="preBlock">
+                                            <img class="preview" id="preview" alt="" name="pic" width="100" height="100" />
+                                        </div>
+                                        <img class="delete" onclick="deleteImg(this)" src="/img/upload/delete.png" />
+                                    </div>
+                                    <div class="item">
+                                        <img class="icon addImg" onclick="clickImg(this);" src="/img/upload/addImg.png" />
+                                        <input name="url" type="file" class="upload_input" onchange="change(this)" />
+                                        <div class="preBlock">
+                                            <img class="preview" alt="" name="pic" width="100" height="100" />
+                                        </div>
+                                        <img class="delete" onclick="deleteImg(this)" src="/img/upload/delete.png" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
