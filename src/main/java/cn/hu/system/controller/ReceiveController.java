@@ -42,7 +42,7 @@ public class ReceiveController extends BaseController {
     public String index(Model model) {
         User user = super.getCurrentUser();
         model.addAttribute("user", user);
-        return "system/receive/receiveUser";
+        return "system/receive/receiveAddress";
     }
 
     @RequestMapping("receive/checkUserName")
