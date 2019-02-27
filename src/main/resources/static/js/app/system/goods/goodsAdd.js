@@ -5,6 +5,8 @@ var $roles = $userAddForm.find("input[name='roles']");
 var E = window.wangEditor
 var editor = new E('#editor')
 // 或者 var editor = new E( document.getElementById('editor') )
+editor.customConfig.uploadImgShowBase64 = true
+editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024
 editor.create()
 
 $(function () {
