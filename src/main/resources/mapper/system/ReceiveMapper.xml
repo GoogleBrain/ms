@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="cn.hu.system.dao.ReceiveMapper">
+	<resultMap id="baseResultMap" type="cn.hu.system.domain.ReceiveAddress">
+		<result column="id" jdbcType="VARCHAR" property="id" />
+		<result column="nickname" jdbcType="VARCHAR" property="nickname" />
+		<result column="receiveprovince" jdbcType="VARCHAR" property="receiveprovince" />
+		<result column="receivecity" jdbcType="VARCHAR" property="receivecity" />
+		<result column="receivecounty" jdbcType="VARCHAR" property="receivecounty" />
+		<result column="receivedetailaddress" jdbcType="VARCHAR"
+			property="receivedetailaddress" />
+		<result column="receivephone" jdbcType="VARCHAR" property="receivephone" />
+		<result column="receivenickname" jdbcType="VARCHAR" property="receivenickname" />
+		<result column="createtime" jdbcType="VARCHAR" property="createtime" />
+	</resultMap>
+	<select id="getReceiveDetails" resultMap="baseResultMap"
+		parameterType="receiveAddress">
+		SELECT
+		t.id,
+		t.nickname,
+		tt.receiveprovince,
+		tt.receivecity,
+		tt.receivecounty,
+		tt.receivedetailaddress,
+		tt.receivephone,
+		tt.receivenickname,
+		tt.createtime
+		FROM
+		front_user t
+		LEFT JOIN
+		front_user_receive_address tt
+		ON t.id =
+		tt.frontuserid
 
-	<select id="getReceiveDetails" resultType="map">
-		select
-		t.id,t.nickname,tt.receiveprovince,tt.receivecity,tt.receivecounty,tt.receivedetailaddress,tt.receivephone,tt.receivenickname from
-		front_user t left join front_user_receive_address tt
-		on t.id=tt.frontuserid order by t.id
+		where 1=1
+		<if test="id != null and id != ''">
+			AND t.id = #{id}
+		</if>
+		ORDER BY t.id
 	</select>
-
 </mapper>
