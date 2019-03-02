@@ -1,0 +1,1 @@
+17:15:56.889 febs [http-nio-8080-exec-3] ERROR cn.hu.common.aspect.LogAspect - nested exception is org.apache.ibatis.reflection.ReflectionException: There is no getter for property named '_nickname' in 'class cn.hu.system.domain.ReceiveAddress'

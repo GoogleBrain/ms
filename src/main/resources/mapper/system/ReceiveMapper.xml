@@ -36,6 +36,11 @@
 		<if test="id != null and id != ''">
 			AND t.id = #{id}
 		</if>
+
+		<if test="nickname != null and nickname != ''">
+			<bind name="pattern" value="'%' + _parameter.nickname + '%'" />
+			AND t.nickname LIKE #{pattern}
+		</if>
 		ORDER BY t.id
 	</select>
 </mapper>

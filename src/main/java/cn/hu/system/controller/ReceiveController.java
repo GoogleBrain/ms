@@ -67,7 +67,7 @@ public class ReceiveController extends BaseController {
 	public ResponseBo getUser(Integer userId) {
 		try {
 			ReceiveAddress address = new ReceiveAddress();
-			address.setId(""+userId);
+			address.setId("" + userId);
 			ReceiveAddress receiveAddress = this.receiveAddressService.getReceiveDetails(address).get(0);
 			return ResponseBo.ok(receiveAddress);
 		} catch (Exception e) {
@@ -81,7 +81,9 @@ public class ReceiveController extends BaseController {
 	@RequiresPermissions("receive:list")
 	@ResponseBody
 	public Map<String, Object> userList(QueryRequest request, User user) {
-		return super.selectByPageNumSize(request, () -> this.receiveAddressService.getReceiveDetails(null));
+		ReceiveAddress address = new ReceiveAddress();
+		address.setNickname(user.getUsername());
+		return super.selectByPageNumSize(request, () -> this.receiveAddressService.getReceiveDetails(address));
 	}
 
 	@RequestMapping("receive/excel")
