@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hu.system.dao.GoodsCategoryMapper">
+	<resultMap id="goodsCategoryMap" type="cn.hu.system.domain.GoodsCategory">
+		<result column="id" jdbcType="DECIMAL" property="id" />
+		<result column="goodscategory" jdbcType="VARCHAR" property="goodscategory" />
+		<result column="parent_id" jdbcType="DECIMAL" property="parentId" />
+		<result column="createtime" jdbcType="VARCHAR" property="createtime" />
+	</resultMap>
+
+	<select id="selectById" parameterType="goodsCategory" resultMap="goodsCategoryMap">
+		select * from goods_category where 1=1
+		<if test="id != null and id != ''">
+			AND id = #{id}
+		</if>
+	</select>
+
+
+	<update id="updateGoodsCategory" parameterType="goodsCategory">
+		update goods_category
+		<trim prefix="set" suffixOverrides=",">
+			<if test="goodscategory!=null">goodscategory=#{goodscategory},</if>
+			<if test="parentId!=null">parent_id=#{parentId},</if>
+		</trim>
+		WHERE id=#{id}
+	</update>
+
+	<update id="changeToTop" parameterType="java.util.List">
+		update goods_category set parent_id = 0 where id in (
+		select a.id from
+		(
+		(select id from goods_category where
+		parent_id in
+		<foreach collection="list" item="id" index="index" open="("
+			close=")" separator=",">
+			#{id}
+		</foreach>
+		) ) a )
+	</update>
+</mapper>
