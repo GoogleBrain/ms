@@ -52,7 +52,7 @@ function validateRule() {
         rules: {
             deptName: {
                 required: true,
-                minlength: 3,
+                minlength: 2,
                 maxlength: 10,
                 remote: {
                     url: "goodscategory/checkDeptName",

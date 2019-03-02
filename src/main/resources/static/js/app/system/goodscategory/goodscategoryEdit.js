@@ -9,19 +9,18 @@ function updateDept() {
         $MB.n_warning('一次只能修改一个分类！');
         return;
     }
-    var deptId = selected[0].id;
-    $.post(ctx + "goodscategory/getDept", {"deptId": deptId}, function (r) {
+    var id = selected[0].id;
+    $.post(ctx + "goodscategory/getDept", {"id": id}, function (r) {
         if (r.code === 0) {
             var $form = $('#dept-add');
             var $deptTree = $('#deptTree');
             $form.modal();
             var dept = r.msg;
-            $("#dept-add-modal-title").html('修改分类');
-            $form.find("input[name='deptName']").val(dept.deptName);
-            $form.find("input[name='oldDeptName']").val(dept.deptName);
-            $form.find("input[name='deptId']").val(dept.deptId);
+            $("#dept-add-modal-title").html('修改商品分类');
+            $form.find("input[name='goodscategory']").val(dept.goodscategory);
+            $form.find("input[name='id']").val(dept.id);
             $deptTree.jstree('select_node', dept.parentId, true);
-            $deptTree.jstree('disable_node', dept.deptId);
+            $deptTree.jstree('disable_node', dept.id);
             $("#dept-add-button").attr("name", "update");
         } else {
             $MB.n_danger(r.msg);
