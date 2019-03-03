@@ -7,51 +7,38 @@ $(function () {
             return {
                 pageSize: params.limit,
                 pageNum: params.offset / params.limit + 1,
-                username: $userTableForm.find("input[name='username']").val().trim(),
-                ssex: $userTableForm.find("select[name='ssex']").val(),
-                status: $userTableForm.find("select[name='status']").val()
+                frontuserid: $userTableForm.find("input[name='frontuserid']").val().trim()
             };
         },
         columns: [{
             checkbox: true
         }, {
-            field: 'userId',
+            field: 'id',
             visible: false
         }, {
-            field: 'username',
-            title: '用户名'
+            field: 'frontuserid',
+            title: '用户编号'
+        },{
+            field: 'rechargeamt',
+            title: '充值金额'
         }, {
-            field: 'id',
+            field: 'rechargeorderid',
             title: '订单号'
         }, {
-            field: 'amt',
-            title: '金额'
-        }, {
-            field: 'mobile',
-            title: '操作时间'
-        },
-//        {
-//            field: 'ssex',
-//            title: '性别',
-//            formatter: function (value, row, index) {
-//                if (value === '0') return '男';
-//                else if (value === '1') return '女';
-//                else return '保密';
-//            }
-//        }, {
-//            field: 'crateTime',
-//            title: '创建时间'
-//        }, 
-        {
-            field: 'status',
+            field: 'rechargetime',
+            title: '开始时间'
+        },{
+            field: 'rechargeupdatetime',
+            title: '更新时间'
+        },{
+            field: 'rechargestatus',
             title: '状态',
             formatter: function (value, row, index) {
                 if (value === '1') return '<span class="badge badge-success">成功</span>';
-                if (value === '0') return '<span class="badge badge-warning">失败</span>';
-                if (value === '2') return '<span class="badge badge-warning">处理中</span>';
+                if (value === '2') return '<span class="badge badge-warning">失败</span>';
+                if (value === '3') return '<span class="badge badge-warning">处理中</span>';
             }
         }
-
         ]
     };
 
@@ -72,7 +59,7 @@ function deleteUsers() {
     var selected_length = selected.length;
     var contain = false;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要删除的用户！');
+        $MB.n_warning('请勾选需要删除的提现！');
         return;
     }
     var ids = "";

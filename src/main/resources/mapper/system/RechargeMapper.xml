@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hu.system.dao.RechargeMapper">
+	<resultMap id="rechargeMap" type="cn.hu.system.domain.Recharge">
+		<result column="id" jdbcType="DECIMAL" property="id" />
+		<result column="frontuserid" jdbcType="DECIMAL" property="frontuserid" />
+		<result column="rechargeamt" jdbcType="VARCHAR" property="rechargeamt" />
+		<result column="rechargeorderid" jdbcType="VARCHAR" property="rechargeorderid" />
+		<result column="rechargestatus" jdbcType="VARCHAR" property="rechargestatus" />
+		<result column="rechargetime" jdbcType="VARCHAR" property="rechargetime" />
+		<result column="parent_id" jdbcType="DECIMAL" property="parentId" />
+		<result column="rechargeupdatetime" jdbcType="VARCHAR"
+			property="rechargeupdatetime" />
+	</resultMap>
+
+	<select id="selectById" parameterType="recharge" resultMap="rechargeMap">
+		select * from recharge where 1=1
+		<if test="id != null and id != ''">
+			AND id = #{id}
+		</if>
+	</select>
+
+
+	<update id="changeToTop" parameterType="java.util.List">
+		update goods_category set parent_id = 0 where id in (
+		select a.id from
+		(
+		(select id from goods_category where
+		parent_id in
+		<foreach collection="list" item="id" index="index" open="("
+			close=")" separator=",">
+			#{id}
+		</foreach>
+		) ) a )
+	</update>
+</mapper>

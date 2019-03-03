@@ -10,7 +10,7 @@ function initTreeTable() {
             expandAll: true,
             expandColumn: "2",
             ajaxParams: {
-                deptName: $(".dept-table-form").find("input[name='goodscategory']").val().trim()
+            	goodscategory: $(".dept-table-form").find("input[name='goodscategory']").val().trim()
             },
             columns: [{
                     field: 'selectItem',

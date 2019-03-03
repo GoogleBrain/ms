@@ -1,0 +1,172 @@
+<div class="modal fade" id="user-add" data-keyboard="false" data-backdrop="static" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title pull-left" id="user-add-modal-title">新增用户</h3>
+            </div>
+            <div class="modal-body">
+                <form id="user-add-form">
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 用户名：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="username" class="form-control">
+                                    <input type="text" hidden name="oldusername" class="form-control">
+                                    <input type="text" hidden name="userId" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row user_password">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 金额：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="password" value="123456" readonly class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 提现方式：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 到账账号：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 汇款方式：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 汇款单号：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 创建时间：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group" style="margin-top:10px;">
+                                <span class="input-group-addon">
+					               	审核状态：
+					             </span>
+                                <select class="form-control" name="type">
+                                        <option value="" selected>请选择</option>
+                                        <option value="0">通过</option>
+                                        <option value="0">未通过</option>
+                                        <option value="1">待审核</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 审核备注：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group" style="margin-top:10px;">
+                                <span class="input-group-addon">
+					               	提现状态：
+					             </span>
+                                <select class="form-control" name="type">
+                                        <option value="" selected>请选择</option>
+                                        <option value="0">成功</option>
+                                        <option value="0">失败</option>
+                                        <option value="1">处理中</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon">
+					               	 提现备注：
+					            </span>
+                                <div class="form-group">
+                                    <input type="text" name="mobile" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row"  style="display: none;">
+                        <div class="col-sm-11">
+                            <div class="input-group">
+                                <span class="input-group-addon" style="justify-content: flex-start;margin-top: .5rem;">
+					               	部门：
+					             </span>
+                                <div class="form-group">
+                                    <div id="deptTree"></div>
+                                </div>
+                                <input type="hidden" name="deptId">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-save" id="user-add-button" name="save">保存</button>
+                <button type="button" class="btn btn-secondary btn-close">关闭</button>
+                <button class="btn-hide"></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script data-th-src="@{js/app/system/recharge/rechargeAdd.js}"></script>
