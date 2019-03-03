@@ -16,7 +16,9 @@ import cn.hu.common.domain.QueryRequest;
 import cn.hu.common.domain.ResponseBo;
 import cn.hu.common.util.FileUtil;
 import cn.hu.common.util.MD5Utils;
+import cn.hu.system.domain.Rebate;
 import cn.hu.system.domain.User;
+import cn.hu.system.service.RebateService;
 import cn.hu.system.service.UserService;
 
 import java.util.List;
@@ -29,6 +31,9 @@ public class RebateController extends BaseController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private RebateService rebateService;
 
     private static final String ON = "on";
 
@@ -66,8 +71,8 @@ public class RebateController extends BaseController {
     @RequestMapping("rebate/list")
     @RequiresPermissions("rebate:list")
     @ResponseBody
-    public Map<String, Object> userList(QueryRequest request, User user) {
-        return super.selectByPageNumSize(request, () -> this.userService.findUserWithDept(user, request));
+    public Map<String, Object> userList(QueryRequest request, Rebate rebate) {
+        return super.selectByPageNumSize(request, () -> this.rebateService.findAllRebate(rebate, request));
     }
 
     @RequestMapping("rebate/excel")

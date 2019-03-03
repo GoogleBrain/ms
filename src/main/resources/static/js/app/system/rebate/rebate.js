@@ -15,19 +15,19 @@ $(function () {
         columns: [{
             checkbox: true
         }, {
-            field: 'userId',
+            field: 'id',
             visible: false
         }, {
-            field: 'username',
-            title: '推荐人'
+            field: 'fromusername',
+            title: '消费者'
         }, {
-            field: 'deptName',
-            title: '消费人'
+            field: 'tousername',
+            title: '返利者'
         }, {
-            field: 'email',
+            field: 'frontuserdetailsordersid',
             title: '订单号'
         }, {
-            field: 'mobile',
+            field: 'rebateamt',
             title: '返利金额'
         }, 
 //        {
@@ -40,7 +40,7 @@ $(function () {
 //            }
 //        },
         {
-            field: 'crateTime',
+            field: 'createtime',
             title: '创建时间'
         }, 
 //        {

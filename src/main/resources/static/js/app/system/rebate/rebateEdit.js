@@ -17,7 +17,7 @@ function updateUser() {
             $form.modal();
             var user = r.msg;
             $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('修改用户');
+            $("#user-add-modal-title").html('本订单返利明细');
             $form.find("input[name='username']").val(user.username).attr("readonly", true);
             $form.find("input[name='oldusername']").val(user.username);
             $form.find("input[name='userId']").val(user.userId);

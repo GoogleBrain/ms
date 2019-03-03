@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hu.system.dao.RebateMapper">
+	<resultMap id="rebateMap" type="cn.hu.system.domain.Rebate">
+		<result column="id" jdbcType="DECIMAL" property="id" />
+		<result column="frontuserdetailsordersid" jdbcType="DECIMAL"
+			property="frontuserdetailsordersid" />
+		<result column="fromuserid" jdbcType="DECIMAL" property="fromuserid" />
+		<result column="fromusername" jdbcType="VARCHAR" property="fromusername" />
+		<result column="fronuserphone" jdbcType="VARCHAR" property="fronuserphone" />
+		<result column="touserid" jdbcType="DECIMAL" property="touserid" />
+		<result column="tousername" jdbcType="DECIMAL" property="tousername" />
+		<result column="touserphone" jdbcType="VARCHAR" property="touserphone" />
+		<result column="rebateamt" jdbcType="VARCHAR" property="rebateamt" />
+		<result column="createtime" jdbcType="VARCHAR" property="createtime" />
+	</resultMap>
+
+	<select id="selectById" parameterType="rebate" resultMap="rebateMap">
+		select * from rebate where 1=1
+		<if test="id != null and id != ''">
+			AND id = #{id}
+		</if>
+	</select>
+</mapper>
