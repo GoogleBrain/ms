@@ -1,46 +1,27 @@
-function updateUser() {
-    var selected = $("#userTable").bootstrapTable('getSelections');
+function updateDict() {
+    var selected = $("#dictTable").bootstrapTable("getSelections");
     var selected_length = selected.length;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要修改的提现！');
+        $MB.n_warning('请勾选需要修改的字典！');
         return;
     }
     if (selected_length > 1) {
-        $MB.n_warning('一次只能修改一个提现！');
+        $MB.n_warning('一次只能修改一个字典！');
         return;
     }
-    var userId = selected[0].userId;
-    $.post(ctx + "withdraw/getUser", {"userId": userId}, function (r) {
+    var id = selected[0].id;
+    $.post(ctx + "withdraw/getDict", {"id": id}, function (r) {
         if (r.code === 0) {
-            var $form = $('#user-add');
-            var $deptTree = $('#deptTree');
+            var $form = $('#dict-add');
             $form.modal();
-            var user = r.msg;
-            $form.find(".user_password").hide();
-            $("#user-add-modal-title").html('提现详情');
-            $form.find("input[name='username']").val(user.username).attr("readonly", true);
-            $form.find("input[name='oldusername']").val(user.username);
-            $form.find("input[name='userId']").val(user.userId);
-            $form.find("input[name='email']").val(user.email);
-            $form.find("input[name='mobile']").val(user.mobile);
-            var roleArr = [];
-            for (var i = 0; i < user.roleIds.length; i++) {
-                roleArr.push(user.roleIds[i]);
-            }
-            $form.find("select[name='rolesSelect']").multipleSelect('setSelects', roleArr);
-            $form.find("input[name='roles']").val($form.find("select[name='rolesSelect']").val());
-            var $status = $form.find("input[name='status']");
-            if (user.status === '1') {
-                $status.prop("checked", true);
-                $status.parent().next().html('可用');
-            } else {
-                $status.prop("checked", false);
-                $status.parent().next().html('禁用');
-            }
-            $("input:radio[value='" + user.ssex + "']").prop("checked", true);
-            $deptTree.jstree().open_all();
-            $deptTree.jstree('select_node', user.deptId, true);
-            $("#user-add-button").attr("name", "update");
+            var dict = r.msg;
+            $("#dict-add-modal-title").html('修改字典');
+            $form.find("input[name='frontuserid']").val(dict.frontuserid);
+            $form.find("input[name='backuserid']").val(dict.backuserid);
+            $form.find("input[name='withdrawamt']").val(dict.withdrawamt);
+            $("input:radio[value='" + dict.withdrawexamstatus + "'][name='withdrawexamstatus']").prop("checked", true);
+            $("input:radio[value='" + dict.withdrawstatus + "'][name='withdrawstatus']").prop("checked", true);
+            $("#dict-add-button").attr("name", "update");
         } else {
             $MB.n_danger(r.msg);
         }

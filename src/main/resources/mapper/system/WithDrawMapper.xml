@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hu.system.dao.WithDrawMapper">
+	<resultMap id="withDrawResultMap" type="cn.hu.system.domain.WithDraw">
+		<id column="id" jdbcType="DECIMAL" property="id" />
+		<result column="frontuserid" jdbcType="DECIMAL" property="frontuserid" />
+		<result column="backuserid" jdbcType="DECIMAL" property="backuserid" />
+		<result column="withdrawamt" jdbcType="VARCHAR" property="withdrawamt" />
+		<result column="withdrawmethod" jdbcType="VARCHAR" property="withdrawmethod" />
+		<result column="withdrawtime" jdbcType="VARCHAR" property="withdrawupdatetime" />
+		<result column="withdrawexamstatus" jdbcType="VARCHAR"
+			property="withdrawexamstatus" />
+		<result column="withdrawexamreason" jdbcType="VARCHAR"
+			property="withdrawexamreason" />
+		<result column="withdrawstatus" jdbcType="VARCHAR" property="withdrawstatus" />
+		<result column="withdraworderid" jdbcType="VARCHAR" property="withdraworderid" />
+	</resultMap>
+
+	<select id="selectById" parameterType="withDraw" resultMap="withDrawResultMap">
+		select * from with_draw where 1=1
+		<if test="id != null and id != ''">
+			AND id = #{id}
+		</if>
+	</select>
+</mapper>

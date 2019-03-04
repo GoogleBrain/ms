@@ -1,105 +1,86 @@
-$(function () {
-    var $userTableForm = $(".user-table-form");
+$(function() {
+    var $dictTableForm = $(".dict-table-form");
     var settings = {
         url: ctx + "withdraw/list",
         pageSize: 10,
-        queryParams: function (params) {
+        queryParams: function(params) {
             return {
                 pageSize: params.limit,
                 pageNum: params.offset / params.limit + 1,
-                username: $userTableForm.find("input[name='username']").val().trim()
-//                ssex: $userTableForm.find("select[name='ssex']").val(),
-//                status: $userTableForm.find("select[name='status']").val()
+//                keyy: $dictTableForm.find("input[name='keyy']").val().trim(),
+//                valuee: $dictTableForm.find("input[name='valuee']").val().trim(),
+//                tableName: $dictTableForm.find("input[name='tableName']").val().trim(),
+//                fieldName: $dictTableForm.find("input[name='fieldName']").val().trim()
             };
         },
         columns: [{
             checkbox: true
         }, {
-            field: 'userId',
+            field: 'id',
             visible: false
         }, {
-            field: 'username',
-            title: '用户名'
+            field: 'frontuserid',
+            title: '提现人'
         }, {
-            field: 'deptName',
-            title: '金额'
+            field: 'backuserid',
+            title: '操作人'
         }, {
-            field: 'email',
-            title: '提现方式'
-        }, {
-            field: 'mobile',
-            title: '到账账号'
+            field: 'withdrawamt',
+            title: '提现金额'
         }, 
-//        {
-//            field: 'ssex',
-//            title: '性别',
-//            formatter: function (value, row, index) {
-//                if (value === '0') return '男';
-//                else if (value === '1') return '女';
-//                else return '保密';
-//            }
-//        },
         {
-            field: 'crateTime',
+            field: 'withdrawtime',
             title: '创建时间'
         },
         {
-            field: 'status',
+            field: 'withdrawexamstatus',
             title: '审核状态',
             formatter: function (value, row, index) {
-                if (value === '1') return '<span class="badge badge-success">有效</span>';
-                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
-                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+                if (value === '1') return '<span class="badge badge-success">通过</span>';
+                if (value === '2') return '<span class="badge badge-warning">未通过</span>';
+                if (value === '3') return '<span class="badge badge-warning">审核中</span>';
             }
         },
         {
-            field: 'status',
+            field: 'withdrawstatus',
             title: '提现状态',
             formatter: function (value, row, index) {
-                if (value === '1') return '<span class="badge badge-success">有效</span>';
-                if (value === '0') return '<span class="badge badge-warning">锁定</span>';
+                if (value === '1') return '<span class="badge badge-success">成功</span>';
+                if (value === '2') return '<span class="badge badge-warning">处理中</span>';
             }
         }
-
         ]
     };
 
-    $MB.initTable('userTable', settings);
+    $MB.initTable('dictTable', settings);
 });
 
 function search() {
-    $MB.refreshTable('userTable');
+    $MB.refreshTable('dictTable');
 }
 
 function refresh() {
-    $(".user-table-form")[0].reset();
-    $MB.refreshTable('userTable');
+    $(".dict-table-form")[0].reset();
+    search();
 }
 
-function deleteUsers() {
-    var selected = $("#userTable").bootstrapTable('getSelections');
+function deleteDicts() {
+    var selected = $("#dictTable").bootstrapTable('getSelections');
     var selected_length = selected.length;
-    var contain = false;
     if (!selected_length) {
-        $MB.n_warning('请勾选需要删除的提现！');
+        $MB.n_warning('请勾选需要删除的字典！');
         return;
     }
     var ids = "";
     for (var i = 0; i < selected_length; i++) {
-        ids += selected[i].userId;
+        ids += selected[i].dictId;
         if (i !== (selected_length - 1)) ids += ",";
-        if (userName === selected[i].username) contain = true;
     }
-    if (contain) {
-        $MB.n_warning('勾选用户中包含当前登录用户，无法删除！');
-        return;
-    }
-
     $MB.confirm({
-        text: "确定删除选中用户？",
+        text: "确定删除选中的字典？",
         confirmButtonText: "确定删除"
-    }, function () {
-        $.post(ctx + 'withdraw/delete', {"ids": ids}, function (r) {
+    }, function() {
+        $.post(ctx + 'withdraw/delete', { "ids": ids }, function(r) {
             if (r.code === 0) {
                 $MB.n_success(r.msg);
                 refresh();
@@ -110,22 +91,22 @@ function deleteUsers() {
     });
 }
 
-function exportUserExcel() {
-    $.post(ctx + "withdraw/excel", $(".user-table-form").serialize(), function (r) {
-        if (r.code === 0) {
-            window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
-        } else {
-            $MB.n_warning(r.msg);
-        }
-    });
+function exportDictExcel(){
+	$.post(ctx+"withdraw/excel",$(".dict-table-form").serialize(),function(r){
+		if (r.code === 0) {
+			window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
+		} else {
+			$MB.n_warning(r.msg);
+		}
+	});
 }
 
-function exportUserCsv() {
-    $.post(ctx + "withdraw/csv", $(".user-table-form").serialize(), function (r) {
-        if (r.code === 0) {
-            window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
-        } else {
-            $MB.n_warning(r.msg);
-        }
-    });
+function exportDictCsv(){
+	$.post(ctx+"withdraw/csv",$(".dict-table-form").serialize(),function(r){
+		if (r.code === 0) {
+			window.location.href = "common/download?fileName=" + r.msg + "&delete=" + true;
+		} else {
+			$MB.n_warning(r.msg);
+		}
+	});
 }
