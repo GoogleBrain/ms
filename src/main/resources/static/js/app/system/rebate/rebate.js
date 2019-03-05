@@ -22,7 +22,7 @@ $(function () {
             title: '消费者'
         }, {
             field: 'tousername',
-            title: '返利者'
+            title: '收益者'
         }, {
             field: 'frontuserdetailsordersid',
             title: '订单号'
