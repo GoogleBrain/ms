@@ -15,10 +15,10 @@ $(function () {
         columns: [{
             checkbox: true
         }, {
-            field: 'userId',
+            field: 'id',
             visible: false
         }, {
-            field: 'username',
+            field: 'talentrealname',
             title: '入驻商户名'
         },
         {

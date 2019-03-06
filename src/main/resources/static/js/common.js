@@ -8,7 +8,7 @@ var $MB = (function () {
         sidePagination: "server",
         pageNumber: 1,
         pageSize: 10,
-        pageList: [5, 10, 25, 50, 100],
+        pageList: [1,5, 10, 25, 50, 100],
         strictSearch: true,
         showColumns: false,
         minimumCountColumns: 2,

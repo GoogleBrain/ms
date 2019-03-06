@@ -16,7 +16,9 @@ import cn.hu.common.domain.QueryRequest;
 import cn.hu.common.domain.ResponseBo;
 import cn.hu.common.util.FileUtil;
 import cn.hu.common.util.MD5Utils;
+import cn.hu.system.domain.Talent;
 import cn.hu.system.domain.User;
+import cn.hu.system.service.TalentService;
 import cn.hu.system.service.UserService;
 
 import java.util.List;
@@ -34,6 +36,9 @@ public class TalentController extends BaseController {
 
     @Autowired
     private UserService userService;
+    
+    @Autowired
+    private TalentService talentService;
 
     private static final String ON = "on";
 
@@ -57,9 +62,9 @@ public class TalentController extends BaseController {
 
     @RequestMapping("talent/getUser")
     @ResponseBody
-    public ResponseBo getUser(Long userId) {
+    public ResponseBo getUser(Long id) {
         try {
-            User user = this.userService.findById(userId);
+            Talent user = this.talentService.selectById(id);
             return ResponseBo.ok(user);
         } catch (Exception e) {
             log.error("获取用户失败", e);
@@ -71,8 +76,8 @@ public class TalentController extends BaseController {
     @RequestMapping("talent/list")
     @RequiresPermissions("talent:list")
     @ResponseBody
-    public Map<String, Object> userList(QueryRequest request, User user) {
-        return super.selectByPageNumSize(request, () -> this.userService.findUserWithDept(user, request));
+    public Map<String, Object> userList(QueryRequest request, Talent talent) {
+        return super.selectByPageNumSize(request, () -> this.talentService.findAllTalents(talent));
     }
 
     @RequestMapping("talent/excel")

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.hu.system.dao.TalentMapper">
+	<resultMap id="talentResultMap" type="cn.hu.system.domain.Talent">
+		<id column="id" jdbcType="DECIMAL" property="id" />
+		<result column="talentid" jdbcType="DECIMAL" property="talentid" />
+		<result column="amt" jdbcType="VARCHAR" property="amt" />
+		<result column="talentrealname" jdbcType="VARCHAR" property="talentrealname" />
+		<result column="talentaddress" jdbcType="VARCHAR" property="talentaddress" />
+		<result column="talentphone" jdbcType="VARCHAR" property="talentphone" />
+		<result column="cardfront" jdbcType="VARCHAR" property="cardfront" />
+		<result column="cardback" jdbcType="VARCHAR" property="cardback" />
+		<result column="license" jdbcType="VARCHAR" property="license" />
+		<result column="weixin" jdbcType="VARCHAR" property="weixin" />
+		<result column="zhifubao" jdbcType="VARCHAR" property="zhifubao" />
+		<result column="bankcard" jdbcType="VARCHAR" property="bankcard" />
+		<result column="examstatus" jdbcType="VARCHAR" property="examstatus" />
+		<result column="examreason" jdbcType="VARCHAR" property="examreason" />
+		<result column="createtime" jdbcType="VARCHAR" property="createtime" />
+		<result column="ifrealname" jdbcType="VARCHAR" property="ifrealname" />
+	</resultMap>
+
+	<select id="selectById" parameterType="talent" resultMap="talentResultMap">
+		select * from talent where 1=1
+		<if test="id != null and id != ''">
+			AND id = #{id}
+		</if>
+	</select>
+</mapper>

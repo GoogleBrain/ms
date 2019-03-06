@@ -117,7 +117,7 @@ $(window).on("load", function () {
     // 修改个人信息
     $(".user__img").attr("src", avatar);
     $("#user__profile").on('click', function () {
-        $.post(ctx + "user/profile", function (r) {
+        $.post(ctx + "backuser/profile", function (r) {
             $breadcrumb.html("").append('<li class="breadcrumb-item">个人信息</li>');
             $main_content.html("").append(r);
         });
