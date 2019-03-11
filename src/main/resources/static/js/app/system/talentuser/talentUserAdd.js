@@ -17,13 +17,14 @@ $(function () {
     });
 
     $("#user-add .btn-save").click(function () {
-        var name = $(this).attr("name");
-        getDept();
+        var name = $(this).attr("update");
+        alert(name);
+        //getDept();
         var validator = $userAddForm.validate();
         var flag = validator.form();
         if (flag) {
             if (name === "save") {
-                $.post(ctx + "backuser/add", $userAddForm.serialize(), function (r) {
+                $.post(ctx + "talent/add", $userAddForm.serialize(), function (r) {
                     if (r.code === 0) {
                         closeModal();
                         $MB.n_success(r.msg);
@@ -32,7 +33,7 @@ $(function () {
                 });
             }
             if (name === "update") {
-                $.post(ctx + "backuser/update", $userAddForm.serialize(), function (r) {
+                $.post(ctx + "talent/update", $userAddForm.serialize(), function (r) {
                     if (r.code === 0) {
                         closeModal();
                         $MB.n_success(r.msg);
@@ -73,7 +74,7 @@ function validateRule() {
                 minlength: 3,
                 maxlength: 10,
                 remote: {
-                    url: "backuser/checkUserName",
+                    url: "talent/checkUserName",
                     type: "get",
                     dataType: "json",
                     data: {

@@ -137,13 +137,13 @@ public class TalentController extends BaseController {
     @RequiresPermissions("talent:add")
     @RequestMapping("talent/add")
     @ResponseBody
-    public ResponseBo addUser(User user, Long[] roles) {
+    public ResponseBo addUser() {
         try {
-            if (ON.equalsIgnoreCase(user.getStatus()))
-                user.setStatus(User.STATUS_VALID);
-            else
-                user.setStatus(User.STATUS_LOCK);
-            this.userService.addUser(user, roles);
+//            if (ON.equalsIgnoreCase(user.getStatus()))
+//                user.setStatus(User.STATUS_VALID);
+//            else
+//                user.setStatus(User.STATUS_LOCK);
+////            this.userService.addUser(user, roles);
             return ResponseBo.ok("新增用户成功！");
         } catch (Exception e) {
             log.error("新增用户失败", e);
